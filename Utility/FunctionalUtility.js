@@ -116,4 +116,36 @@ isLeapYear(year){
     }
 },
 /*------------------------ Coupon Number ----------------------*/
+coupon(size){
+    var array = [];
+    //To take all coupon input from user
+    console.log("Enter "+size+" coupons");
+    for (let i = 0; i < size; i++){
+        array[i] = read.question();
+    }
+   
+    //To find max and min values from an array
+    var max = Math.max.apply(null, array);
+    var min = Math.min.apply(null, array);
+  
+    // To find number of Count ittration
+    var count = 0;
+     while(size > 0){
+        var ran = this.getRandom(min, max);
+        for(let i = 0; i < size; i++){
+            if(array[i] == ran){
+                count++;
+                size--;
+                break;
+            }
+        }
+        count++; 
+     }
+     console.log("Total Ittration for Random Numbers are = "+count);
+},
+//External Random function to generate Random Number
+getRandom(min, max){
+   var random = Math.floor(Math.random() * (max - min + 1 )) + min;
+   return random;
+},
 }
