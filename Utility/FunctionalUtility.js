@@ -1,6 +1,5 @@
 var read = require('readline-sync');
 
-
 module.exports = {
 
 /*----------------------- Replace String --------------------*/
