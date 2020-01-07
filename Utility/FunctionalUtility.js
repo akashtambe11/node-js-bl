@@ -3,14 +3,8 @@ var read = require('readline-sync');
 
 module.exports = {
 
-/*-------------------------- Addition ----------------------*/
-add(a, b){
-
-    var ans = a + b;
-    console.log("Addition = "+ans);
-},
-
 /*----------------------- Replace String --------------------*/
+
 replaceString(str, name){
     
     while(name.length < 3){
@@ -22,6 +16,7 @@ replaceString(str, name){
 },
 
 /*----------------------- Harmonic Number --------------------*/
+
 harmonic: function mySelf (nthNumber) {
     
     var sum = 0;
@@ -39,6 +34,7 @@ harmonic: function mySelf (nthNumber) {
 },
 
 /*-------------------------- Gambler ------------------------*/
+
 gamblerSimulator(stakes, goals, trials){
     var bet = 0;
     var win = 0;
@@ -62,6 +58,7 @@ gamblerSimulator(stakes, goals, trials){
 },
 
 /*-------------------------- 2D Array -------------------------*/
+
 twoDimArrray(row, column){
     var array = [];
     for(let i = 0; i < row ; i++){
@@ -85,23 +82,37 @@ twoDimArrray(row, column){
 },
 
 /*-----------------Sum Of Three Integer Zero------------------*/
+
 sumOfThreeIntZero(length){
     var array = [];
     //Input Array
     console.log("Enter "+length+" Elements of Array\n");
-    for(let i = 0; i < length; i++){
-        array[i]= read.question();
+    for(var i = 0; i < length; i++){
+        array[i]= parseInt(read.question());
     }
     //Computation and Print
-    for(let i = 0; i < length; i++){
-        for(let j = i+1; j < length; j++){
-            for(let k = j+1; k < length; k++){
-                if(array[i]+array[j]+array[k]==0){
-                    console.log(array[i]+" "+array[j]+" "+array[k])
+    for(var i = 0; i < length; i++){
+        for(var j = i+1; j < length; j++){
+            for(var k = j+1; k < length; k++){
+                if(array[i] + array[j] + array[k] == 0){
+                    console.log("Three Elements are = "+array[i]+", "+array[j]+", "+array[k]);
                 }
             }
         }
     }
 },
-/*-------------------------- Leap Year ------------------------*/
+/*------------------------- Leap Year ------------------------*/
+
+isLeapYear(year){
+    while(year.length < 4){
+        console.log("\nInvalid Input");
+        var year = read.question("Enter four digit Year\n")
+    }
+    if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+        console.log(year + " is Leap Year")
+    }
+        else{
+        console.log(year + " is NOT Leap Year")
+    }
+}
 }
