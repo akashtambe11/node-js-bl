@@ -4,6 +4,7 @@
   "description": "Nodejs Fellowship Programms",
   "main": "index.js",
   "scripts": {
+    "debug": "nodemon --inspect Algorithm/BinarySearchInt.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,6 +18,8 @@
   },
   "homepage": "https://github.com/akashtambe11/NodejsBL#readme",
   "dependencies": {
+    "file-system": "^2.2.2",
+    "nodemon": "^2.0.2",
     "readline-sync": "^1.4.10"
   }
 }

@@ -1,9 +1,11 @@
 var read = require('readline-sync');
+var word = require('../Json/word.json');
 
 module.exports = {
 
 /*------------------------ Anagram -----------------------*/
 isAnagram(str1, str2){
+   
     //To removing all spaces
     var str1trim = str1.replace(/\s/g,'');
     var str2trim = str2.replace(/\s/g,'');
@@ -23,7 +25,63 @@ isAnagram(str1, str2){
 },
 /*------------------ Binary Search Integer----------------*/
 binarySearchInteger(size){
+    console.log("\nEnter "+size+" Elements of Array");
+    var array = [];
+    for(let i = 0; i < size; i++){
+        array[i] = parseInt(read.question());
+    }
+    var key = read.question("Enter the Search Key in Array\n");
+    var low = 0;
+    var high = array.length - 1;
+    var mid = parseInt((low + high)/2);
     
+    while(low <= high){
+        if(key == array[mid]){
+            console.log("Found key at Position = "+mid);
+            break;
+        }else if(key > array[mid]){
+            low =parseInt(mid + 1);
+            mid = parseInt((low + high)/2);
+        }else if(key < array[mid]){
+            high = parseInt(mid - 1);
+            mid = parseInt((low + high)/2);
+        }else{
+            console.log("Your Key '"+key+"' does not found in Search.")
+        }    
+    }
+    if (low > high){
+        console.log("Your Key '"+key+"' does not found in Search.")
+    }
+},
+/*------------------ Binary Search String----------------*/
+binarySearchString(size){
+    console.log("\nEnter "+size+" Elements of Array");
+    var array = [];
+    for(let i = 0; i < size; i++){
+        array[i] = read.question();
+    }
+    var key = read.question("Enter the Search Key in Array\n");
+    var low = 0;
+    var high = array.length - 1;
+    var mid = parseInt((low + high)/2);
+    
+    while(low <= high){
+        if(key == array[mid]){
+            console.log("Found key at Position = "+mid);
+            break;
+        }else if(key > array[mid]){
+            low =parseInt(mid + 1);
+            mid = parseInt((low + high)/2);
+        }else if(key < array[mid]){
+            high = parseInt(mid - 1);
+            mid = parseInt((low + high)/2);
+        }else{
+            console.log("Your Key '"+key+"' does not found in Search.")
+        }    
+    }
+    if (low > high){
+        console.log("Your Key '"+key+"' does not found in Search.")
+    }
 },
 /*----------------- Insertion Sort Integer----------------*/
 insertionSortInteger(size){
@@ -132,4 +190,5 @@ dayOfWeek(d, m, y){
     console.log(typeof(d0));
     return Math.floor(d0);
 },
+
 }
