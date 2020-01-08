@@ -2,6 +2,25 @@ var read = require('readline-sync');
 
 module.exports = {
 
+/*------------------------ Anagram -----------------------*/
+isAnagram(str1, str2){
+    //To removing all spaces
+    var str1trim = str1.replace(/\s/g,'');
+    var str2trim = str2.replace(/\s/g,'');
+
+    if(str1trim.length == str2trim.length){
+        var str1Sort = str1trim.toLowerCase().split('').sort().join('');
+        var str2Sort = str2trim.toLowerCase().split('').sort().join('');
+            if(str1Sort == str2Sort){
+                console.log("Strings '"+str1+"' & '"+str2+"' are Anagram.")
+            }else{
+                console.log("Strings '"+str1+"' & '"+str2+"' are NOT Anagram.")
+            }
+        }else{
+            console.log("Strings "+str1+" & "+str2+" are NOT Anagram.")
+    }
+
+},
 /*----------------- Insertion Sort Integer----------------*/
 insertionSortInteger(size){
     console.log("\nEnter "+size+" Elements of Array");
