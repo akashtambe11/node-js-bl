@@ -1,8 +1,69 @@
 var read = require('readline-sync');
 
 module.exports = {
-/*----------------------- Bubble Sort --------------------*/
-bubleSortArray(size){
+
+/*----------------- Insertion Sort Integer----------------*/
+insertionSortInteger(size){
+    console.log("\nEnter "+size+" Elements of Array");
+    var array = [];
+    for(let i = 0; i < size; i++){
+        array[i] = parseInt(read.question());
+    }
+    //Sorting Computation
+    for(let i = 0; i < array.length; i++){
+        for(let j = i; j > 0; j--){
+            if(array[j] < array[j - 1]){
+                var temp = array[j];
+                array[j] = array[j - 1];
+                array[j - 1]= temp;
+            }else 
+                break;
+        }
+    }
+    console.log("\nSorted Integer Array = \n"+array);
+},
+
+/*----------------- Insertion Sort String-----------------*/
+insertionSortString(size){
+    console.log("\nEnter "+size+" Elements of Array");
+    var array = [];
+    for(let i = 0; i < size; i++){
+        array[i] = read.question();
+    }
+    //Sorting Computation
+    for(let i = 0; i < array.length; i++){
+        for(let j = i; j > 0; j--){
+            if(array[j] < array[j - 1]){
+                var temp = array[j];
+                array[j] = array[j - 1];
+                array[j - 1]= temp;
+            }else 
+                break;
+        }
+    }
+    console.log("\nSorted Integer Array = \n"+array);
+},
+/*------------------ Bubble Sort Integer------------------*/
+bubleSortInteger(size){
+    console.log("\nEnter "+size+" Elements of Array");
+    var array = [];
+    for(let i = 0; i < size; i++){
+        array[i] = parseInt(read.question());
+    }
+    //Sorting Computation
+    for(let i = 0; i < array.length; i++){
+        for(let j = 0; j < array.length - i; j++){
+            if(array[j] > array[j + 1]){
+                var temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1]= temp;
+            }
+        }
+    }
+    console.log("\nSorted Integer Array = \n"+array);
+},
+/*------------------ Bubble Sort String------------------*/
+bubleSortString(size){
     console.log("\nEnter "+size+" Elements of Array");
     var array = [];
     for(let i = 0; i < size; i++){
@@ -18,7 +79,7 @@ bubleSortArray(size){
             }
         }
     }
-    console.log("Sorted Array = \n"+array);
+    console.log("\nSorted String Array = \n"+array);
 },
 /*-----------------------Day of Week --------------------*/
 isRightDate(dateInput){

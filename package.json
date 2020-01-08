@@ -1,0 +1,22 @@
+{
+  "name": "fellowship",
+  "version": "1.0.0",
+  "description": "Nodejs Fellowship Programms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akashtambe11/NodejsBL.git"
+  },
+  "author": "AKASH TAMBE",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akashtambe11/NodejsBL/issues"
+  },
+  "homepage": "https://github.com/akashtambe11/NodejsBL#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
