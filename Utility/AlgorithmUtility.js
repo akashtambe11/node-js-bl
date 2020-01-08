@@ -7,7 +7,7 @@ isAnagram(str1, str2){
     //To removing all spaces
     var str1trim = str1.replace(/\s/g,'');
     var str2trim = str2.replace(/\s/g,'');
-
+     
     if(str1trim.length == str2trim.length){
         var str1Sort = str1trim.toLowerCase().split('').sort().join('');
         var str2Sort = str2trim.toLowerCase().split('').sort().join('');
@@ -20,6 +20,10 @@ isAnagram(str1, str2){
             console.log("Strings "+str1+" & "+str2+" are NOT Anagram.")
     }
 
+},
+/*------------------ Binary Search Integer----------------*/
+binarySearchInteger(size){
+    
 },
 /*----------------- Insertion Sort Integer----------------*/
 insertionSortInteger(size){
