@@ -1,8 +1,30 @@
 var read = require('readline-sync');
-var word = require('../Json/word.json');
+var fs = require('fs');
+//var BinStrFile = require('../Json/BinSearchFile.json');
 
 module.exports = {
+/*===================== GLOBAL METHODS ====================*/
+//Array Integer Input
+arrayIntElementInput(size){
+    console.log("\nEnter "+size+" Elements of Array");
+    var array = [];
+    for(let i = 0; i < size; i++){
+        array[i] = parseInt(read.question());
+    }
+    return array.sort();
+},
 
+//Array String Input
+arrayStrElementInput(size){
+    console.log("\nEnter "+size+" Elements of Array");
+    var array = [];
+    for(let i = 0; i < size; i++){
+        array[i] = read.question();
+    }
+    return array.sort();
+},
+
+/*======================= PROGRAMMS ======================*/
 /*------------------------ Anagram -----------------------*/
 isAnagram(str1, str2){
    
@@ -24,72 +46,54 @@ isAnagram(str1, str2){
 
 },
 /*------------------ Binary Search Integer----------------*/
-binarySearchInteger(size){
-    console.log("\nEnter "+size+" Elements of Array");
-    var array = [];
-    for(let i = 0; i < size; i++){
-        array[i] = parseInt(read.question());
-    }
-    var key = read.question("Enter the Search Key in Array\n");
+binarySearchInteger(array, key){
+    
     var low = 0;
     var high = array.length - 1;
     var mid = parseInt((low + high)/2);
     
     while(low <= high){
         if(key == array[mid]){
-            console.log("Found key at Position = "+mid);
+            console.log("Your Key '"+key+"' is FOUND in an Array.");
             break;
         }else if(key > array[mid]){
             low =parseInt(mid + 1);
             mid = parseInt((low + high)/2);
-        }else if(key < array[mid]){
+        }else{
             high = parseInt(mid - 1);
             mid = parseInt((low + high)/2);
-        }else{
-            console.log("Your Key '"+key+"' does not found in Search.")
-        }    
+        }   
     }
     if (low > high){
-        console.log("Your Key '"+key+"' does not found in Search.")
+        console.log("Your Key '"+key+"' does NOT found in Search.")
     }
 },
 /*------------------ Binary Search String----------------*/
-binarySearchString(size){
-    console.log("\nEnter "+size+" Elements of Array");
-    var array = [];
-    for(let i = 0; i < size; i++){
-        array[i] = read.question();
-    }
-    var key = read.question("Enter the Search Key in Array\n");
+binarySearchString(array, key){
+
     var low = 0;
     var high = array.length - 1;
     var mid = parseInt((low + high)/2);
     
     while(low <= high){
         if(key == array[mid]){
-            console.log("Found key at Position = "+mid);
+            console.log("Your Key '"+key+"' is FOUND in an Array.");
             break;
         }else if(key > array[mid]){
             low =parseInt(mid + 1);
             mid = parseInt((low + high)/2);
-        }else if(key < array[mid]){
+        }else{
             high = parseInt(mid - 1);
             mid = parseInt((low + high)/2);
-        }else{
-            console.log("Your Key '"+key+"' does not found in Search.")
-        }    
+        }   
     }
     if (low > high){
-        console.log("Your Key '"+key+"' does not found in Search.")
+        console.log("Your Key '"+key+"' does NOT found in Search.")
     }
 },
 /*----------------- Insertion Sort Integer----------------*/
-insertionSortInteger(size){
-    console.log("\nEnter "+size+" Elements of Array");
-    var array = [];
-    for(let i = 0; i < size; i++){
-        array[i] = parseInt(read.question());
-    }
+insertionSortInteger(array){
+    
     //Sorting Computation
     for(let i = 0; i < array.length; i++){
         for(let j = i; j > 0; j--){
@@ -105,12 +109,8 @@ insertionSortInteger(size){
 },
 
 /*----------------- Insertion Sort String-----------------*/
-insertionSortString(size){
-    console.log("\nEnter "+size+" Elements of Array");
-    var array = [];
-    for(let i = 0; i < size; i++){
-        array[i] = read.question();
-    }
+insertionSortString(array){
+  
     //Sorting Computation
     for(let i = 0; i < array.length; i++){
         for(let j = i; j > 0; j--){
@@ -125,12 +125,8 @@ insertionSortString(size){
     console.log("\nSorted Integer Array = \n"+array);
 },
 /*------------------ Bubble Sort Integer------------------*/
-bubleSortInteger(size){
-    console.log("\nEnter "+size+" Elements of Array");
-    var array = [];
-    for(let i = 0; i < size; i++){
-        array[i] = parseInt(read.question());
-    }
+bubleSortInteger(array){
+
     //Sorting Computation
     for(let i = 0; i < array.length; i++){
         for(let j = 0; j < array.length - i; j++){
@@ -144,12 +140,8 @@ bubleSortInteger(size){
     console.log("\nSorted Integer Array = \n"+array);
 },
 /*------------------ Bubble Sort String------------------*/
-bubleSortString(size){
-    console.log("\nEnter "+size+" Elements of Array");
-    var array = [];
-    for(let i = 0; i < size; i++){
-        array[i] = read.question();
-    }
+bubleSortString(array){
+   
     //Sorting Computation
     for(let i = 0; i < array.length; i++){
         for(let j = 0; j < array.length - i; j++){
@@ -190,5 +182,21 @@ dayOfWeek(d, m, y){
     console.log(typeof(d0));
     return Math.floor(d0);
 },
+/*------------- Binary Search String File -------------*/
+binSearchStringFile(name){
+    var data = fs.readFileSync(__dirname+'/TextFiles/BinSearchStringFile.txt', 'utf-8'); 
+    var array = data.split(", ").sort();
+ 
+    this.binarySearchString(array, name);
+    
+},
 
+/*-------------- Bubble Sort Integer File --------------*/
+bubSortIntegerFile(){
+    var data = fs.readFileSync(__dirname+'/TextFiles/BubSortIntegerFile.txt', 'utf-8'); 
+    var array = data.split(", ");
+
+    this.bubleSortInteger(array);
+},
+ 
 }

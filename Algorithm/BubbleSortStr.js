@@ -3,4 +3,6 @@ var util = require('../Utility/AlgorithmUtility');
 
 var size = parseInt(read.question("Enter the Size of an Array\n"));
 
-util.bubleSortString(size);
+var arr = util.arrayStrElementInput(size);
+
+util.bubleSortString(arr);

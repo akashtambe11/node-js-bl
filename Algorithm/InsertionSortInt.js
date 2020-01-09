@@ -3,4 +3,6 @@ var util = require('../Utility/AlgorithmUtility');
 
 var size = parseInt(read.question("Enter the Size of an Array\n"));
 
-util.insertionSortInteger(size);
+var arr = util.arrayIntElementInput(size);
+
+util.insertionSortInteger(arr);
