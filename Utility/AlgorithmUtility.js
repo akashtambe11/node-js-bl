@@ -193,7 +193,7 @@ binSearchStringFile(name){
 
 /*-------------- Bubble Sort Integer File --------------*/
 bubSortIntegerFile(){
-    var data = fs.readFileSync(__dirname+'/TextFiles/BubSortIntegerFile.txt', 'utf-8'); 
+    var data = fs.readFileSync(__dirname+'/TextFiles/IntegerFile.txt', 'utf-8'); 
     var array = data.split(", ");
 
     this.bubleSortInteger(array);
