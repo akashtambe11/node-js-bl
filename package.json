@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "debug": "nodemon --inspect Algorithm/BinarySearchInt.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha Test/test.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +18,9 @@
   },
   "homepage": "https://github.com/akashtambe11/NodejsBL#readme",
   "dependencies": {
+    "asserts": "^4.0.2",
     "file-system": "^2.2.2",
+    "mocha": "^7.0.0",
     "nodemon": "^2.0.2",
     "readline": "^1.3.0",
     "readline-sync": "^1.4.10"

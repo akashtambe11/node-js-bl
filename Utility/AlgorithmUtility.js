@@ -3,6 +3,26 @@ var fs = require('fs');
 //var BinStrFile = require('../Json/BinSearchFile.json');
 
 module.exports = {
+
+add(num1, num2){
+    
+    if((typeof(num1) && typeof(num2)) === typeof("a")){
+        return false
+    }else{
+         
+    var ans = num1 + num2;
+    return ans;
+    }    
+},
+
+
+
+
+
+
+
+
+
 /*===================== GLOBAL METHODS ====================*/
 //Array Integer Input
 arrayIntElementInput(size){
@@ -23,9 +43,42 @@ arrayStrElementInput(size){
     }
     return array.sort();
 },
+//Prime Number Checker
+isPrime(num){
+   
+    var count = 0;
+    for(let i = 1; i <= num; i++){
+        if(num % i == 0){
+            count++;
+        }
+    }
+    if(count == 2){ 
+        //[Index 0, Index 1]
+        return [true, num];
+    }else{
+        return false;
+    }
+   
+},
+//Palindrome
+isPalindrome(num){
+    console.log("\nPrime number which are also PALINDROM")
+    for(let i = 0; i < num.length; i++){
+    var temp = num[i];
+    var rem, revNumber = 0;
+        while(num[i] > 0){
+            rem =num[i] % 10;
+            revNumber = revNumber * 10 + rem;
+            num[i] = parseInt(num[i] / 10);
+        }
+        if (revNumber == temp){
+            console.log(temp);
+        }
+    } 
+},
 
-/*======================= PROGRAMMS ======================*/
-/*------------------------ Anagram -----------------------*/
+/*======================== PROGRAMMS ======================*/
+/*---------------(--------- Anagram -----------------------*/
 isAnagram(str1, str2){
    
     //To removing all spaces
@@ -44,6 +97,21 @@ isAnagram(str1, str2){
             console.log("Strings "+str1+" & "+str2+" are NOT Anagram.")
     }
 
+},
+/*--------------- Prime Number (1 - 1000)-----------------*/
+primeRange(){
+    var primeArray = [];
+    console.log("Prime number 0f Range 0 to 1000")
+    for(let i = 0; i <= 1000; i++){
+       var primePass = this.isPrime(i);
+       if(primePass[0]){
+        //
+            primeArray.push(primePass[1])
+            console.log(i);
+       }
+    }
+    //It will Call isPrimePalindrome method(Whole Array is Passed)
+    this.isPalindrome(primeArray);
 },
 /*------------------ Binary Search Integer----------------*/
 binarySearchInteger(array, key){
@@ -154,6 +222,21 @@ bubleSortString(array){
     }
     console.log("\nSorted String Array = \n"+array);
 },
+/*-------------------- Vending Machin -------------------*/
+vendingMachineCal(noteArr, money){
+    var i = 0, notes = 0, numOfNotes = 0;
+ 
+    while(money > 0){
+        notes =Math.floor(money / noteArr[i]);
+        remMoney = money % noteArr[i];
+        
+        numOfNotes = numOfNotes + notes;
+        money = remMoney;
+        
+        console.log("Total notes of '"+noteArr[i]+"' are \n"+numOfNotes);
+        i++;
+    }
+},
 /*-----------------------Day of Week --------------------*/
 isRightDate(dateInput){
     while(dateInput < 1 || dateInput > 31){
@@ -198,5 +281,24 @@ bubSortIntegerFile(){
 
     this.bubleSortInteger(array);
 },
- 
+
+/*------------ Insertion Sort Integer File -------------*/
+InsSortIntegerFile(){
+    var data = fs.readFileSync(__dirname+'/TextFiles/IntegerFile.txt', 'utf-8');
+    var array = data.split(", ");
+
+    this.insertionSortInteger(array);
+},
+
+/*----------------- Binary Conversion -----------------*/
+toBinary(num){
+    var rem = 0, binary = 0, i = 1;
+    while(num > 0){
+        rem = parseInt(num % 2);
+        binary = parseInt(binary + rem * i);
+        num = parseInt(num / 2);
+        i = i * 10;  
+    }
+    return binary;
+},
 }

@@ -123,24 +123,25 @@ coupon(size){
         array[i] = read.question();
     }
    
-    //To find max and min values from an array
+    //To Decide max and min range for random number from an array
     var max = Math.max.apply(null, array);
     var min = Math.min.apply(null, array);
   
     // To find number of Count ittration
     var count = 0;
-     while(size > 0){
+    var visited = array.length;
+     while(visited > 0){
         var ran = this.getRandom(min, max);
-        for(let i = 0; i < size; i++){
+        for(let i = 0; i < array.length; i++){
             if(array[i] == ran){
                 count++;
-                size--;
+                visited--;
                 break;
             }
         }
         count++; 
      }
-     console.log("Total Ittration for Random Numbers are = "+count);
+     console.log("Total Ittration to get all coupons are = "+count);
 },
 //External Random function to generate Random Number
 getRandom(min, max){
