@@ -3,7 +3,11 @@ var fs = require('fs');
 //var BinStrFile = require('../Json/BinSearchFile.json');
 
 module.exports = {
-
+//Integer Input
+integerInput(){
+        var value = read.question("");
+        return value;
+    },
 add(num1, num2){
     
     if((typeof(num1) && typeof(num2)) === typeof("a")){
