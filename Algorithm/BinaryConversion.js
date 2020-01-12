@@ -1,7 +1,11 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-var num = parseInt(read.question('Enter number to convert it into Binary Representation\n'));
+BinaryMain = () => {
+console.log("Enter number to convert it into Binary\n");
+var num = util.integerInput();
 
 var binaryConv = util.toBinary(num);
-console.log(binaryConv);
+console.log("Binary Conversion for "+num+" = "+binaryConv);  
+}
+BinaryMain();

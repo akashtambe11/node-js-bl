@@ -1,10 +1,17 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-xyz = () => {
-var str1 = read.question("Enter the string\n");
-var str2 = read.question("Enter string to check Anagram\n");
-
-util.isAnagram(str1, str2);
- }
- xyz();
+AnagramMain = () => {
+    console.log("Enter String 1 =")
+    var str1 = util.stringInput();
+    console.log("\nEnter String 2 =")
+    var str2 = util.stringInput();
+    
+    var ansCheck = util.isAnagram(str1, str2);
+    if(ansCheck == true){
+        console.log("\nEnterd two Strings are Anagram");
+    }else{
+        console.log("\nTwo Strings are NOT Anagram");
+    }
+}
+AnagramMain();

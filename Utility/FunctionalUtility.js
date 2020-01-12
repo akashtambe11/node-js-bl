@@ -1,35 +1,42 @@
 var read = require('readline-sync');
+var algoUtil = require('../Utility/AlgorithmUtility')
 
 module.exports = {
 
-/*----------------------- Replace String --------------------*/
-
-replaceString(str, name){
-    
-    while(name.length < 3){
-        console.log("Username should have atleast 3 Character");
-        var name = read.question("Enter Username again");
+/*========================== PROGRAMMS ========================*/
+/*------------------------ Coupon Number ----------------------*/
+coupon(size){
+    var array = [];
+    //To take all coupon input from user
+    console.log("Enter "+size+" coupons");
+    for (let i = 0; i < size; i++){
+        array[i] = algoUtil.integerInput();
     }
-    var newString = str.replace("<<UserName>>", name);
-    console.log(newString);
-},
-
-/*----------------------- Harmonic Number --------------------*/
-
-harmonic: function mySelf (nthNumber) {
-    
-    var sum = 0;
-    if(nthNumber > 0){
-        for(let i = 1; i <= nthNumber; i++){
-            sum = sum + (1/i);
+   
+    //To Decide max and min range for random number from an array
+    var max = Math.max.apply(null, array);
+    var min = Math.min.apply(null, array);
+  
+    // To find number of Count ittration
+    var count = 0;
+    var visited = array.length;
+     while(visited > 0){
+        var ran = this.getRandom(min, max);
+        for(let i = 0; i < array.length; i++){
+            if(array[i] == ran){
+                count++;
+                visited--;
+                break;
+            }
         }
-        console.log("\nHarmonic Value for "+nthNumber+" = \n"+sum);
-        
-    }
-    else{
-        var nthNumber = parseInt(read.question("Enter POSITIVE nth number Again"));
-        mySelf(nthNumber);
-    }
+        count++; 
+     }
+     return count;
+},
+//External Random function to generate Random Number
+getRandom(min, max){
+   var random = Math.floor(Math.random() * (max - min + 1 )) + min;
+   return random;
 },
 
 /*-------------------------- Gambler ------------------------*/
@@ -51,10 +58,58 @@ gamblerSimulator(stakes, goals, trials){
         win++;
       
     }
-    console.log("Number of Wins    = "+win);
-    console.log("Percentage of win = "+(win/trials)*100);
-    console.log("Percentage of win = "+((trials - win)/trials)*100);
+    //     [index 1,   index 2,               index 3          ]
+    return [win, (win/trials)*100, ((trials - win)/trials)*100 ]
+    // console.log("Number of Wins    = "+win);
+    // console.log("Percentage of win = "+(win/trials)*100);
+    // console.log("Percentage of win = "+((trials - win)/trials)*100);
 },
+
+/*----------------------- Harmonic Number --------------------*/
+// harmonic: function mySelf (nthNumber) {
+harmonic(nthNumber) {
+
+    var sum = 0;
+    while(nthNumber < 0){
+        console.log("Enter POSITIVE nth number Again");
+        var nthNumber = algoUtil.integerInput();
+    }
+    for(let i = 1; i <= nthNumber; i++){
+        sum = sum + (1/i);
+    }
+    return sum;
+
+},
+//==============>>>>>>>>>>>>>Check from HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+/*------------------------- Leap Year ------------------------*/
+
+isLeapYear(year){
+    console.log("len===="+year);
+    
+    while(year.length < 4 && year.length > 0) {
+        console.log("\nInvalid Input");
+        var year = algoUtil.integerInput();
+    }
+    if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+        return true;
+    }
+    else{
+        return false;
+    }
+},
+
+/*----------------------- Replace String --------------------*/
+
+replaceString(str, name){
+    
+    while(name.length < 3){
+        console.log("Username should have atleast 3 Character");
+        var name = read.question("Enter Username again");
+    }
+    var newString = str.replace("<<UserName>>", name);
+    console.log(newString);
+},
+
 
 /*-------------------------- 2D Array -------------------------*/
 
@@ -114,38 +169,5 @@ isLeapYear(year){
         console.log(year + " is NOT a Leap Year")
     }
 },
-/*------------------------ Coupon Number ----------------------*/
-coupon(size){
-    var array = [];
-    //To take all coupon input from user
-    console.log("Enter "+size+" coupons");
-    for (let i = 0; i < size; i++){
-        array[i] = read.question();
-    }
-   
-    //To Decide max and min range for random number from an array
-    var max = Math.max.apply(null, array);
-    var min = Math.min.apply(null, array);
-  
-    // To find number of Count ittration
-    var count = 0;
-    var visited = array.length;
-     while(visited > 0){
-        var ran = this.getRandom(min, max);
-        for(let i = 0; i < array.length; i++){
-            if(array[i] == ran){
-                count++;
-                visited--;
-                break;
-            }
-        }
-        count++; 
-     }
-     console.log("Total Ittration to get all coupons are = "+count);
-},
-//External Random function to generate Random Number
-getRandom(min, max){
-   var random = Math.floor(Math.random() * (max - min + 1 )) + min;
-   return random;
-},
+
 }

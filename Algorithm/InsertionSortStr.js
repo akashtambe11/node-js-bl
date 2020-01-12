@@ -1,8 +1,13 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-var size = parseInt(read.question("Enter the Size of an Array\n"));
+InsStrMain = () => {
+    console.log("Enter the size of an Array")
+    var size = util.integerInput();
 
-var arr = util.arrayStrElementInput(size);
+    var arr = util.arrayStrElementInput(size);
 
-util.insertionSortString(arr);
+    var InsSortedArr = util.insertionSortString(arr);
+    console.log("Sorted Array = "+InsSortedArr);
+}
+InsStrMain();

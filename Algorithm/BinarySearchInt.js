@@ -1,9 +1,15 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-var size = parseInt(read.question("Enter the Size of an Array\n"));
+BinaryIntMain = () => {
+    console.log("Enter the Size of an Array\n");
+    var size = util.integerInput();
 
-var arr = util.arrayIntElementInput(size);
-var key = read.question("Enter the Search Key in Array\n");
+    var arr = util.arrayIntElementInput(size);
+    
+    console.log("Enter the Search Key in Array\n");
+    var key = util.stringInput();
 
-util.binarySearchInteger(arr, key);
+    util.binarySearchInteger(arr, key);
+}
+BinaryIntMain();

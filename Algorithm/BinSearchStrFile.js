@@ -1,6 +1,10 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-var name = read.question("Enter the name of Fruits\n");
+BinFileMain = () => {
+    console.log("Enter the name of Fruits\n");
+    var name = util.stringInput();
 
-util.binSearchStringFile(name);
+    util.binSearchStringFile(name);
+}
+BinFileMain();

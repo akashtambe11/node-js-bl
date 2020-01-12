@@ -1,5 +1,5 @@
-var assert = require('assert');
-var util = require('../Utility/AlgorithmUtility')
+var assert = require('chai').assert;
+var util = require('../Utility/AlgorithmUtility');
 
 
   describe('DEMOadd', function() {
@@ -14,6 +14,9 @@ var util = require('../Utility/AlgorithmUtility')
     });
     it('with one negative values', function(){
       assert.equal(4, util.add(5, -1));
+    });
+    it('type of ', function(){
+      assert.typeOf(util.add(5, -1),'number');
     });
   });
 

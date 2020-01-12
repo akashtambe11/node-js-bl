@@ -1,6 +1,13 @@
 var read = require('readline-sync');
 var util = require('../Utility/FunctionalUtility');
+var algoUtil = require('../Utility/AlgorithmUtility')
 
-var nthNumber = parseInt(read.question("Enter nth number of Harmonic Series\n"));
+harmonicMain = () => {
+console.log("Enter nth number of Harmonic Series\n");
+var nthNumber = algoUtil.integerInput();
 
-util.harmonic(nthNumber);
+var sum = util.harmonic(nthNumber);
+console.log("\nHarmonic Value for "+nthNumber+" = \n"+sum);
+}
+
+harmonicMain();

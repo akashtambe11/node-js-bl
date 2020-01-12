@@ -1,4 +1,9 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-util.InsSortIntegerFile();
+InsFileMain = () => {
+var InsSortedArr = util.InsSortIntegerFile();
+console.log(InsSortedArr);
+}
+
+InsFileMain();

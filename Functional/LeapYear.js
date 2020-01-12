@@ -1,6 +1,21 @@
 var read = require('readline-sync');
 var util = require('../Utility/FunctionalUtility');
+var algoUtil = require('../Utility/AlgorithmUtility')
 
-var year = read.question("Enter the Year\n");
+leapYearMain = () => {
+    
+    console.log("Enter the Year");
+    
+    var year = algoUtil.integerInput();
+    var yearAns = util.isLeapYear(year);
+    console.log("===>"+yearAns)
 
-util.isLeapYear(year);
+    if(yearAns){
+        console.log(year + " is a Leap Year")
+    }
+    else{
+        console.log(year + " is NOT a Leap Year")
+    }
+    
+}
+leapYearMain();

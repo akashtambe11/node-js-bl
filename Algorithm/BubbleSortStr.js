@@ -1,8 +1,15 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-var size = parseInt(read.question("Enter the Size of an Array\n"));
+BubStrMain = () => {
+    console.log("Enter the size of an Array")
+    var size = util.integerInput();
 
-var arr = util.arrayStrElementInput(size);
+    var arr = util.arrayStrElementInput(size);
 
-util.bubleSortString(arr);
+    var BubSortedArr = util.bubleSortString(arr);
+    console.log("Sorted Array = "+BubSortedArr);
+}
+BubStrMain();
+
+
