@@ -83,6 +83,12 @@ isPalindrome(num){
 /*---------------(--------- Anagram -----------------------*/
 isAnagram(str1, str2){
    try{
+        
+        if(str1 == null || str2 == null)               throw "Null values are not allowed"
+        if(str1 == 'undefined' || str2 == 'undefined') throw "Undefined values are not allowed"
+        if(!isNaN(str1) && !isNaN(str1))               throw "Number input is not allowed"
+   
+        
         //To removing all spaces
         var str1trim = str1.replace(/\s/g,'');
         var str2trim = str2.replace(/\s/g,'');
@@ -100,7 +106,7 @@ isAnagram(str1, str2){
         } 
     }
     catch(e){
-        console.log(e);
+        return e;
     }
 
 },

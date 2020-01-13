@@ -4,19 +4,19 @@ var util = require('../Utility/AlgorithmUtility');
 describe('AnagramDetection.js File', function(){
     it('Value should be String', function(){
         let a = util.isAnagram("abc", "cba");
-        assert.equal(true, a);
+        assert.equal(a, true);
     });
     it('Value should not be Number', function(){
         let b = util.isAnagram(5,10);
-        assert.equal(false, false);
+        assert.equal(b, "Number input is not allowed");
     });
     it('Value should not be undefined', function(){
         let c = util.isAnagram("undefined","undefined");
-        assert.equal(c, true);
+        assert.equal(c, "Undefined values are not allowed");
     });
     it('Value should not be null', function(){
         let d = util.isAnagram(null,null);
-        assert.equal(d, undefined);
+        assert.equal(d, "Null values are not allowed");
     });
  
   
