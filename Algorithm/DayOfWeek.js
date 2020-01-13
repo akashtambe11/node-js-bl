@@ -1,7 +1,7 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-DayMain = () => {
+dayMain = () => {
     console.log("Enter Date");
     var dateInput = util.integerInput();
     var d = parseInt(util.isRightDate(dateInput));
@@ -19,4 +19,4 @@ DayMain = () => {
     var array = ['Sunday', 'Monday', 'Tuesday', 'WednesDay', 'Thursday', 'Friday', 'Saturday'];
     console.log(array[day]);
 }
-DayMain();
+dayMain();

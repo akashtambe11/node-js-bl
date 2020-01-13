@@ -1,7 +1,7 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-AnagramMain = () => {
+anagramMain = () => {
     console.log("Enter String 1 =")
     var str1 = util.stringInput();
     console.log("\nEnter String 2 =")
@@ -14,4 +14,4 @@ AnagramMain = () => {
         console.log("\nTwo Strings are NOT Anagram");
     }
 }
-AnagramMain();
+anagramMain();

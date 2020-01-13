@@ -1,7 +1,7 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-BubIntMain = () => {
+bubIntMain = () => {
     console.log("Enter the size of an Array")
     var size = util.integerInput();
 
@@ -10,4 +10,4 @@ BubIntMain = () => {
     var BubSortedArr = util.bubleSortInteger(arr);
     console.log("Sorted Array = "+BubSortedArr);
 }
-BubIntMain();
+bubIntMain();

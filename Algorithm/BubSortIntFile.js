@@ -1,9 +1,9 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-BubFileMain = () => {
+bubFileMain = () => {
     var sortedArr = util.bubSortIntegerFile();
     console.log(sortedArr);
 }
-BubFileMain();
+bubFileMain();
 

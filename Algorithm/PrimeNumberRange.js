@@ -1,9 +1,9 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-PrimeRangeMain = () => {
+primeRangeMain = () => {
 var paliArray = util.primeRange();
 console.log(paliArray);
 }
-PrimeRangeMain();
+primeRangeMain();
 

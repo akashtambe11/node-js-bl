@@ -277,7 +277,7 @@ insertionSortString(array){
     }
     return array;
 },
-/*------------ Insertion Sort Integer File -------------*/
+/*-------------- Insertion Sort Integer File -------------*/
 InsSortIntegerFile(){
     var data = fs.readFileSync(__dirname+'/TextFiles/IntegerFile.txt', 'utf-8');
     var array = data.split(", ");
@@ -285,6 +285,46 @@ InsSortIntegerFile(){
     var SortedArr = this.insertionSortInteger(array);
     return SortedArr;
 },
+/*------------------ Merge Sort String--------------------*/
+mergeSortString(arr){
+   
+    if(arr.length < 2) return arr;
+    
+        var mid = parseInt(arr.length / 2);
+        var left = arr.slice(0, mid);
+        var right = arr.slice(mid, arr.length);
+        
+        left = this.mergeSortString(left);
+        right = this.mergeSortString(right);
+       
+        var sortedMArr = [];
+        let li = 0;
+        let ri = 0;
+
+        while(li < left.length && ri < right.length){
+            if(left[li] < right[ri]){
+                sortedMArr.push(left[li]);
+                li++;
+                
+            }else{
+                sortedMArr.push(right[ri]);
+                ri++;
+            }
+        }
+        while(li < left.length){
+            sortedMArr.push(left[li]);
+            li++;
+        }
+        while(ri < right.length){
+            sortedMArr.push(right[ri]);
+            ri++;
+        }
+       
+        return sortedMArr; 
+    
+    
+},
+
 /*--------------- Prime Number (1 - 1000)-----------------*/
 primeRange(){
     var primeArray = [];

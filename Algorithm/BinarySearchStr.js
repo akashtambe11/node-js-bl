@@ -1,7 +1,7 @@
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
-BinaryStrMain = () => {
+binaryStrMain = () => {
     console.log("Enter the Size of an Array\n");
     var size = util.integerInput();
 
@@ -12,4 +12,4 @@ BinaryStrMain = () => {
 
     util.binarySearchString(arr, key);
 }
-BinaryStrMain();
+binaryStrMain();
