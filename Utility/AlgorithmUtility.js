@@ -8,7 +8,7 @@ module.exports = {
 /*===================== GLOBAL METHODS ====================*/
 //Integer Input
 integerInput(){
-    let num = read.question("").trim();
+    let num =read.question("").trim();
     while(isNaN(num) || num.length == 0){
              num = read.question("\nInvalid Integer Input (Enter Again) = ").trim();
     }

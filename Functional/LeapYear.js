@@ -8,7 +8,7 @@ leapYearMain = () => {
     
     var year = algoUtil.integerInput();
     var yearAns = util.isLeapYear(year);
-    console.log("===>"+yearAns)
+   
 
     if(yearAns){
         console.log(year + " is a Leap Year")

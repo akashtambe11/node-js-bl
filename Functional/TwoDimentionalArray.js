@@ -1,7 +1,15 @@
 var read = require('readline-sync');
 var util = require('../Utility/FunctionalUtility');
+var algoUtil = require('../Utility/AlgorithmUtility')
 
-var row = read.question("Enter the number of Row\n");
-var column = read.question("Enter the number of Column\n")
+twoDimArrayMain = () => {
+console.log("\nEnter the number of Row");
+var row = algoUtil.integerInput();
+
+console.log("\nEnter the number of Column");
+var column = algoUtil.integerInput();
 
 util.twoDimArrray(row, column);
+}
+
+twoDimArrayMain();

@@ -1,8 +1,14 @@
 var read = require('readline-sync');
 var util = require('../Utility/FunctionalUtility');
+var algoUtil = require('../Utility/AlgorithmUtility');
 
-var str = "Hello <<UserName>>, How are you?";
-console.log(str);
-var name = read.question("Enter your Username\n")
+replaceStrMain = () => {
+    var str = "Hello '<<UserName>>', How are you?";
+    console.log(str);
 
-util.replaceString(str, name);
+    console.log("\nEnter your Username")
+    var name = algoUtil.stringInput();
+    var newString = util.replaceString(str, name);
+    console.log("\n"+newString);
+}
+replaceStrMain();

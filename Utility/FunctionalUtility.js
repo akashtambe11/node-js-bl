@@ -84,10 +84,9 @@ harmonic(nthNumber) {
 /*------------------------- Leap Year ------------------------*/
 
 isLeapYear(year){
-    console.log("len===="+year);
     
-    while(year.length < 4 && year.length > 0) {
-        console.log("\nInvalid Input");
+    while(year.length < 4 || year > 9999) {
+        console.log("\nInvalid Input (Enter 4 Digit year = ");
         var year = algoUtil.integerInput();
     }
     if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
@@ -103,14 +102,30 @@ isLeapYear(year){
 replaceString(str, name){
     
     while(name.length < 3){
-        console.log("Username should have atleast 3 Character");
-        var name = read.question("Enter Username again");
+        console.log("Username should have atleast 3 Character (Enter Again)");
+        var name = algoUtil.stringInput();
     }
     var newString = str.replace("<<UserName>>", name);
-    console.log(newString);
+    return newString;
 },
 
+/*-----------------Sum Of Three Integer Zero------------------*/
 
+sumOfThreeIntZero(array, length){
+
+     
+    //Computation and Print
+    for(var i = 0; i < length; i++){
+        for(var j = i+1; j < length; j++){
+            for(var k = j+1; k < length; k++){
+                
+                if(parseInt(array[i]) + parseInt(array[j]) + parseInt(array[k]) == 0){
+                     return [array[i], array[j], array[k]];
+                }
+            }
+        }
+    }
+},
 /*-------------------------- 2D Array -------------------------*/
 
 twoDimArrray(row, column){
@@ -122,7 +137,8 @@ twoDimArrray(row, column){
     //Input
     for(let i = 0; i < row; i++){
         for(let j = 0; j < column; j++){
-            array[i][j] = read.question("Enter ["+i+" "+j+"] Element\n");
+            console.log("Enter ["+i+" "+j+"] Element");
+            array[i][j] = algoUtil.integerInput();
         }
     }
     //Print
@@ -135,39 +151,6 @@ twoDimArrray(row, column){
     }
 },
 
-/*-----------------Sum Of Three Integer Zero------------------*/
 
-sumOfThreeIntZero(length){
-    var array = [];
-    //Input Array
-    console.log("Enter "+length+" Elements of Array\n");
-    for(var i = 0; i < length; i++){
-        array[i]= parseInt(read.question());
-    }
-    //Computation and Print
-    for(var i = 0; i < length; i++){
-        for(var j = i+1; j < length; j++){
-            for(var k = j+1; k < length; k++){
-                if(array[i] + array[j] + array[k] == 0){
-                    console.log("Three Elements are = "+array[i]+", "+array[j]+", "+array[k]);
-                }
-            }
-        }
-    }
-},
-/*------------------------- Leap Year ------------------------*/
-
-isLeapYear(year){
-    while(year.length < 4){
-        console.log("\nInvalid Input");
-        var year = read.question("Enter four digit Year\n")
-    }
-    if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
-        console.log(year + " is a Leap Year")
-    }
-        else{
-        console.log(year + " is NOT a Leap Year")
-    }
-},
 
 }
