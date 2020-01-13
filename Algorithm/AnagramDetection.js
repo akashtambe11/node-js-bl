@@ -1,3 +1,14 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node AnagramDetection.js
+*
+*Purpose      :  To determine the input two strings are anagram or not.
+*@description  
+*
+*@file        :  AnagramDetection.js
+*@overview    :  AnagramDetection module is to check both strings are anagram or not.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 

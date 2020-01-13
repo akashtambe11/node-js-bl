@@ -1,3 +1,15 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node BinarySearchStr.js
+*
+*Purpose      :  To search string key in array.
+*@description  
+*
+*@file        :  BinarySearchStr.js
+*@overview    :  BinarySearchStr module will help to seach string key from an array and it will 
+                 show result is found or not
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 

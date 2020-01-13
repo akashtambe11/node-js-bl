@@ -1,3 +1,16 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node SumOfThreeInt.js
+*
+*Purpose      :  To identify which three numbers in array's elements addition is zero.
+*@description  
+*
+*@file        :  SumOfThreeInt.js
+*@overview    :  sumOfThreeIntZero module will find addition of which three numbers is zero &
+                 will print those three numbers.
+                 in an array.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var read = require('readline-sync');
 var util = require('../Utility/FunctionalUtility');
 var algoUtil = require('../Utility/AlgorithmUtility');

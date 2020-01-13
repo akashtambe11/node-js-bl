@@ -1,3 +1,14 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node DayOfWeek.js
+*
+*Purpose      :  To find out exact day for specific user entered date.
+*@description  
+*
+*@file        :  DayOfWeek.js
+*@overview    :  DayOfWeek module will to deect the day for enterd date.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 

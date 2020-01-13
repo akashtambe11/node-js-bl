@@ -1,3 +1,15 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node CouponNumber.js
+*
+*Purpose      :  To determine random count required to find all coupons.
+*@description  
+*
+*@file        :  CouponNumber.js
+*@overview    :  coupon module to print random count required to find all coupons which entered
+                 in an array.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var read = require('readline-sync');
 var util = require('../Utility/FunctionalUtility');
 var algoUtil = require('../Utility/AlgorithmUtility')

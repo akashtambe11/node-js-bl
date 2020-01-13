@@ -62,7 +62,7 @@ gamblerSimulator(stakes, goals, trials){
     return [win, (win/trials)*100, ((trials - win)/trials)*100 ]
     // console.log("Number of Wins    = "+win);
     // console.log("Percentage of win = "+(win/trials)*100);
-    // console.log("Percentage of win = "+((trials - win)/trials)*100);
+    // console.log("Percentage of loose = "+((trials - win)/trials)*100);
 },
 
 /*----------------------- Harmonic Number --------------------*/
@@ -80,7 +80,7 @@ harmonic(nthNumber) {
     return sum;
 
 },
-//==============>>>>>>>>>>>>>Check from HEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+
 /*------------------------- Leap Year ------------------------*/
 
 isLeapYear(year){
