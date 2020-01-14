@@ -19,10 +19,19 @@ sumOfThreeMain = () => {
     
     console.log("Enter the Size of an Array");
     var size = algoUtil.integerInput();
+    while(size < 3){
+        console.log("Invalid Size = (size >= 3) ");
+        var size = algoUtil.integerInput();
+    }
 
     var arr = algoUtil.arrayIntElementInput(size);
     var numbers = util.sumOfThreeIntZero(arr, size);
-   
-    console.log("Three Elements are = "+numbers[0]+", "+numbers[1]+", "+numbers[2]);
+    if(numbers == false){
+        console.log("Sum of three integer is not Zero");
+        
+    }else{
+        console.log("Three Elements are = "+numbers[0]+", "+numbers[1]+", "+numbers[2]);
+    }
+       
 }
 sumOfThreeMain();

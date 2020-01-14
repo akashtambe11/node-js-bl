@@ -1,7 +1,8 @@
 var assert = require('chai').assert;
 var util = require('../Utility/AlgorithmUtility');
 
-describe('AnagramDetection.js File', function(){
+describe('Algorithm Programms : AnagramDetection.js File', function(){
+    
     it('Value should be String', function(){
         let a = util.isAnagram("abc", "cba");
         assert.equal(a, true);
