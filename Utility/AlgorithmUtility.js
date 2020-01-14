@@ -26,6 +26,18 @@ stringInput(){
 
 //Array Integer Input
 arrayIntElementInput(size){
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(size == null)            throw "Null input are not allowed"
+        if(size == 'undefined')     throw "Undefined values are not allowed"
+        if(isNaN(size))             throw "String input is not allowed"
+        if(size == 0)               throw "Zero input is not allowed"
+    }
+    catch(e){
+        return e;
+    }
             console.log("\nEnter "+size+" Elements");
             var array = [];
             for(let i = 0; i < size; i++){
@@ -36,6 +48,18 @@ arrayIntElementInput(size){
 
 //Array String Input
 arrayStrElementInput(size){
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(size == null)            throw "Null input are not allowed"
+        if(size == 'undefined')     throw "Undefined values are not allowed"
+        if(isNaN(size))             throw "String input is not allowed"
+        if(size == 0)               throw "Zero input is not allowed"
+    }
+    catch(e){
+        return e;
+    }
     console.log("\nEnter "+size+" Elements");
     var array = [];
     for(let i = 0; i < size; i++){
@@ -45,7 +69,18 @@ arrayStrElementInput(size){
 },
 //Prime Number Checker
 isPrime(num){
-   
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(num == null)            throw "Null input are not allowed"
+        if(num == 'undefined')     throw "Undefined values are not allowed"
+        if(isNaN(num))             throw "String input is not allowed"
+        if(num == 0)               throw "Zero input is not allowed"
+    }
+    catch(e){
+        return e;
+    }
     var count = 0;
     for(let i = 1; i <= num; i++){
         if(num % i == 0){
@@ -62,6 +97,18 @@ isPrime(num){
 },
 //Palindrome
 isPalindrome(num){
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(num == null)            throw "Null input are not allowed"
+        if(num == 'undefined')     throw "Undefined values are not allowed"
+        if(isNaN(num))             throw "String input is not allowed"
+        if(num == 0)               throw "Zero input is not allowed"
+    }
+    catch(e){
+        return e;
+    }
     console.log("\nPrime number which are also PALINDROM")
     var paliArray = [];
     for(let i = 0; i < num.length; i++){
@@ -113,6 +160,18 @@ isAnagram(str1, str2){
 
 /*----------------- Binary Conversion -----------------*/
 toBinary(num){
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(num == null)            throw "Null input are not allowed"
+        if(num == 'undefined')     throw "Undefined values are not allowed"
+        if(isNaN(num))             throw "String input is not allowed"
+        if(num == 0)               throw "Zero input is not allowed"
+    }
+    catch(e){
+        return e;
+    }
     var rem = 0, binary = 0, i = 1;
     while(num > 0){
         rem = parseInt(num % 2);
@@ -125,14 +184,27 @@ toBinary(num){
 
 /*------------------ Binary Search Integer----------------*/
 binarySearchInteger(array, key){
-    
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(array == null || key == null)                   throw "Null input are not allowed"
+        if(array == 'undefined' || key == 'undefined')     throw "Undefined values are not allowed"
+        if(isNaN(key))                                     throw "String input is not allowed"
+        if(array == 0 || key == 0)                         throw "Zero input is not allowed"
+       
+    }
+    catch(e){
+        return e;
+      }
     var low = 0;
     var high = array.length - 1;
     var mid = parseInt((low + high)/2);
     
     while(low <= high){
         if(key == array[mid]){
-            console.log("Your Key '"+key+"' is FOUND in an Array.");
+            return true;
+            // console.log("Your Key '"+key+"' is FOUND in an Array.");
             break;
         }else if(key > array[mid]){
             low =parseInt(mid + 1);
@@ -143,20 +215,34 @@ binarySearchInteger(array, key){
         }   
     }
     if (low > high){
-        console.log("Your Key '"+key+"' does NOT found in Search.")
+        return false;
+        // console.log("Your Key '"+key+"' does NOT found in Search.")
     }
 },
 
 /*------------------ Binary Search String----------------*/
 binarySearchString(array, key){
-
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(array == null || key == null)                   throw "Null input are not allowed"
+        if(array == 'undefined' || key == 'undefined')     throw "Undefined values are not allowed"
+        if(!isNaN(key))                                    throw "Number input is not allowed"
+        if(array == 0 || key == 0)                         throw "Zero input is not allowed"
+       
+    }
+    catch(e){
+        return e;
+    }
     var low = 0;
     var high = array.length - 1;
     var mid = parseInt((low + high)/2);
     
     while(low <= high){
         if(key == array[mid]){
-            console.log("Your Key '"+key+"' is FOUND in an Array.");
+            return true;
+            // console.log("Your Key '"+key+"' is FOUND in an Array.");
             break;
         }else if(key > array[mid]){
             low =parseInt(mid + 1);
@@ -167,7 +253,8 @@ binarySearchString(array, key){
         }   
     }
     if (low > high){
-        console.log("Your Key '"+key+"' does NOT found in Search.")
+        return false;
+        // console.log("Your Key '"+key+"' does NOT found in Search.")
     }
 },
 

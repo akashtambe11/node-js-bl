@@ -20,8 +20,13 @@ binaryIntMain = () => {
     var arr = util.arrayIntElementInput(size);
     
     console.log("Enter the Search Key in Array\n");
-    var key = util.stringInput();
+    var key = util.integerInput();
 
-    util.binarySearchInteger(arr, key);
+    var keyDetection = util.binarySearchInteger(arr, key);
+   
+    if(keyDetection)
+        console.log("Your Key '"+key+"' is FOUND in an Array.");
+        else
+        console.log("Your Key '"+key+"' does NOT found in Search.")
 }
 binaryIntMain();

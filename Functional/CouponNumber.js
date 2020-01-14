@@ -15,6 +15,10 @@ var util = require('../Utility/FunctionalUtility');
 var algoUtil = require('../Utility/AlgorithmUtility')
 
 couponMain = () => {
+/**
+*@description size is used to take input from user will used to for element input
+*@var {Number} size.
+*/
 console.log("Enter the quantity of coupons");
 var size = algoUtil.integerInput();
 

@@ -22,6 +22,11 @@ binaryStrMain = () => {
     console.log("Enter the Search Key in Array\n");
     var key = util.stringInput();
 
-    util.binarySearchString(arr, key);
+    var keyDetection = util.binarySearchString(arr, key);
+    
+    if(keyDetection)
+        console.log("Your Key '"+key+"' is FOUND in an Array.");
+        else
+        console.log("Your Key '"+key+"' does NOT found in Search.")
 }
 binaryStrMain();
