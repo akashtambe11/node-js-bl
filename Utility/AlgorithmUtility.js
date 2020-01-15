@@ -260,6 +260,15 @@ binarySearchString(array, key){
 
 /*------------- Binary Search String File -------------*/
 binSearchStringFile(name){
+    try{
+        
+        if(name == "")                 throw "Null values are not allowed"
+        if(name == 'undefined')        throw "Undefined values are not allowed"
+        if(!isNaN(name)  )             throw "Number input is not allowed"
+    }
+    catch(e){
+        console.log(e); 
+    }
     var data = fs.readFileSync(__dirname+'/TextFiles/BinSearchStringFile.txt', 'utf-8'); 
     var array = data.split(", ").sort();
  
@@ -269,7 +278,14 @@ binSearchStringFile(name){
 
 /*------------------ Bubble Sort Integer------------------*/
 bubleSortInteger(array){
-
+    try{
+        for(let i = 0; i <= array.length; i++){
+            if(isNaN(array[i]))     throw "String elements are is not allowed"
+        }
+    }
+    catch(e){
+        return e;
+    }
     //Sorting Computation
     for(let i = 0; i < array.length; i++){
         for(let j = 0; j < array.length - i; j++){
@@ -285,7 +301,14 @@ bubleSortInteger(array){
 
 /*------------------ Bubble Sort String------------------*/
 bubleSortString(array){
-   
+    try{
+        for(let i = 0; i <= array.length; i++){
+            if(!isNaN(array[i]))     throw "Number elements are is not allowed"
+        }
+    }
+    catch(e){
+        return e;
+    }
     //Sorting Computation
     for(let i = 0; i < array.length; i++){
         for(let j = 0; j < array.length - i; j++){
@@ -342,7 +365,14 @@ dayOfWeek(d, m, y){
 
 /*----------------- Insertion Sort Integer----------------*/
 insertionSortInteger(array){
-    
+    try{
+        for(let i = 0; i <= array.length; i++){
+            if(isNaN(array[i]))     throw "String elements are is not allowed"
+        }
+    }
+    catch(e){
+        return e;
+    }
     //Sorting Computation
     for(let i = 0; i < array.length; i++){
         for(let j = i; j > 0; j--){
@@ -359,7 +389,14 @@ insertionSortInteger(array){
 
 /*----------------- Insertion Sort String-----------------*/
 insertionSortString(array){
- 
+    try{
+        for(let i = 0; i <= array.length; i++){
+            if(!isNaN(array[i]))     throw "Number elements are is not allowed"
+        }
+    }
+    catch(e){
+        return e;
+    }
     //Sorting Computation
     for(let i = 0; i < array.length; i++){
         for(let j = i; j > 0; j--){
