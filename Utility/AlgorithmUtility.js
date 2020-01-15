@@ -311,19 +311,22 @@ bubSortIntegerFile(){
 /*-----------------------Day of Week --------------------*/
 isRightDate(dateInput){
     while(dateInput < 1 || dateInput > 31){
-        var dateInput = read.question("Enter Proper Date (Range: 1 - 31)\n");
+        console.log("Enter Proper Date (Range: 1 - 31)");
+        var dateInput = this.integerInput();
     }
     return dateInput;
 },
 isRightMonth(monthInput){
     while(monthInput < 1 || monthInput > 12){
-        var monthInput = read.question("Enter Proper Month (Range: 1 - 12)\n");
+        console.log("Enter Proper Month (Range: 1 - 12)");
+        var monthInput =  this.integerInput();
     }
     return monthInput;
 },
 isRighYear(yearInput){
     while(yearInput < 1582 || yearInput > 9999){
-        var yearInput = read.question("Enter Proper Year (Range: 1582 - 9999)\n");
+        console.log("Enter Proper Year (Range: 1582 - 9999)");
+        var yearInput =  this.integerInput();
     }
     return yearInput;
 },

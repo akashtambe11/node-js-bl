@@ -8,7 +8,7 @@ describe('Functional Programs : Coupon.js File', function(){
         assert.equal("Null input are not allowed", a);
     });
     it('Value should not be undefined', function(){
-        let a = util.coupon("undefined");
+        let a = util.coupon(undefined);
         assert.equal("Undefined values are not allowed", a);
     });
     it('Value should not be zero', function(){
