@@ -264,7 +264,7 @@ binSearchStringFile(name){
         
         if(name == "")                 throw "Null values are not allowed"
         if(name == 'undefined')        throw "Undefined values are not allowed"
-        if(!isNaN(name)  )             throw "Number input is not allowed"
+        if(!isNaN(name))             throw "Number input is not allowed"
     }
     catch(e){
         console.log(e); 
