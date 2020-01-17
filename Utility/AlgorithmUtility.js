@@ -279,8 +279,11 @@ binSearchStringFile(name){
 /*------------------ Bubble Sort Integer------------------*/
 bubleSortInteger(array){
     try{
-        for(let i = 0; i <= array.length; i++){
-            if(isNaN(array[i]))     throw "String elements are is not allowed"
+        console.log("==================="+array.length);
+        
+        for(let i = 0; i < array.length; i++){
+            if(isNaN(array[i]))      throw "String elements are is not allowed"
+                
         }
     }
     catch(e){
