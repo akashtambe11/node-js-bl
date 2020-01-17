@@ -9,7 +9,7 @@ orderedList = () => {
 
     console.log("Text file contains following data : \n"+textData);
     var arrData = textData.split(" "); 
-    console.log(arrData);
+    // console.log(arrData);
     
     
     /**
@@ -20,7 +20,7 @@ orderedList = () => {
     }
     //Printing list of Text File
     var oldList = util.printLinkList();
-    console.log("Old Array = \n "+oldList);
+    console.log("Old List = \n"+oldList+"\n");
     
 
     while(true){

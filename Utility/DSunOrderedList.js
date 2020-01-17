@@ -21,7 +21,7 @@ class UnOrderedLinkList {
    */
   fileRead() {
     var textData = fs.readFileSync(__dirname + "/TextFiles/UnOrderedList.txt", "utf-8");
-    return textData;
+    return textData.trim();
    
   }
 
@@ -29,65 +29,88 @@ class UnOrderedLinkList {
   /**
    * @description Insert data at the first
    */
-
   insertAtFirst(data) {
-    try{
-      if(data == undefined || data == null) throw "Data cannot be undefined or null"
-      if(!isNaN(name))                      throw "Input should not be string"
+    try{ 
+      if(data == undefined || data == null || data.length == 0)  throw "input should not be undefined or null"
+      if(!(/^[a-zA-Z]+$/.test(data)))                             throw "input should be string"
+
+        this.head = new node(data, this.head);
+        this.size++;
+         
     }
     catch(e){
-      return e;
-    }
-    this.head = new node(data, this.head);
-    this.size++;
+        return e;
+    } 
+
   }
 
   /**
    * @description Insert data at the last
    */
   insertAtLast(data) {
-    const endNode = new node(data);
-    if (this.head == null) {
-      this.head = endNode;
-    } else {
-      let current = this.head;
-      while (current.next != null) {
-        current = current.next;
-      }
-      current.next = endNode;
+    try{ 
+      if(data == undefined || data == null || data.length == 0)  throw "input should not be undefined or null"
+      if(!(/^[a-zA-Z]+$/.test(data)))                             throw "input should be string"
+        
+        const endNode = new node(data);
+          if (this.head == null) {
+          this.head = endNode;
+          } else {
+          let current = this.head;
+            while (current.next != null) {
+              current = current.next;
+            }
+          current.next = endNode;
+          }
+        this.size++;
     }
-    this.size++;
+    catch(e){
+        return e;
+    }
+    
   }
 
   /**
    * @description Insert data at position
    */
   insertAtPosition(data, index) {
-    /**
-     * @description Index should be grater than zero and size;
-     */
-    if (index > 0 && index > this.size) {
-      return;
-    }
+    try{ 
+      if(data == undefined || data == null || data.length == 0 || index == undefined || index == null || index.length == 0)
+                                                                  throw "input should not be undefined or null"
+      if(!(/^[a-zA-Z]+$/.test(data)))                             throw "input data should be string"
+      if(isNaN(index))                                            throw "input Index should be number"
 
-    if (index == 0) {
-      this.head = new node(data, this.head);
-      this.size++;
-      return;
-    }
+         /**
+         * @description Index should be grater than zero and size;
+         */
+        if (index > 0 && index > this.size) {
+          return;
+        }
 
-    const positionNode = new node(data);
-    let current, previous;
-    current = this.head;
+        if (index == 0) {
+          this.head = new node(data, this.head);
+          this.size++;
+          return;
+        }
 
-    for (let i = 0; i < index; i++) {
-      previous = current;
-      current = current.next;
+        const positionNode = new node(data);
+        let current, previous;
+        current = this.head;
+
+        for (let i = 0; i < index; i++) {
+          previous = current;
+          current = current.next;
+        }
+        positionNode.next = current;
+        previous.next = positionNode;
+        this.size++;
+         
     }
-    positionNode.next = current;
-    previous.next = positionNode;
-    this.size++;
-  }
+    catch(e){
+        return e;
+    } 
+    
+}
 
   /**
    * @description Delete at start
@@ -122,21 +145,31 @@ class UnOrderedLinkList {
    * @description Delete at postion
    */
   deleteAtPosition(index) {
-    if (index > 0 && index > this.size) {
-      return;
-    }
-    let previous, current;
-    current = this.head;
+    try{ 
+      if(index == undefined || index == null || index.length == 0)   throw "input should not be undefined or null"
+      if(isNaN(index))                                               throw "input should be number"
 
-    if (index == 0) {
-      this.head = current;
+        if (index > 0 && index > this.size) {
+          return;
+        }
+        let previous, current;
+        current = this.head;
+    
+        if (index == 0) {
+          this.deleteAtStart()
+        }
+          for (let i = 0; i < index; i++) {
+            previous = current;
+            current = current.next;
+          }
+        previous.next = current.next;
+        this.size--;
+
     }
-    for (let i = 0; i < index; i++) {
-      previous = current;
-      current = current.next;
+    catch(e){
+        return e;
     }
-    previous.next = current.next;
-    this.size--;
+
   }
 
   /**
@@ -144,15 +177,19 @@ class UnOrderedLinkList {
    *              or if not fond then it will add at end
    */
  search(data){
+  try{ 
+    if(data == undefined || data == null || data.length == 0)   throw "input should not be undefined or null"
+    if(!(/^[a-zA-Z]+$/.test(data)))                             throw "input should be string"
+
     let current = this.head;
     let index = 0;
     let found = false;
     //If data found then it will be deleted
-    while(current != null){
-      if(data == current.data){                               
-        this.deleteAtPosition(index);
-        found = true;
-      }
+      while(current != null){
+        if(data == current.data){                               
+          this.deleteAtPosition(index);
+          found = true;
+        }
     current = current.next;
     index++;   
     }
@@ -161,6 +198,11 @@ class UnOrderedLinkList {
     if(found == false){
       this.insertAtFirst(data);
     }
+  }
+  catch(e){
+      return e;
+  }
+    
  }
   
 //-------------------------find data-------------------------------
@@ -168,18 +210,26 @@ class UnOrderedLinkList {
    * @description Find data at perticuler index
    */
   indexGetData(index) {
-    /**
-     * @description If index of node is larger that size then return null.
-     */
-    if (index > this.size) {
-      return null;
+    try{ 
+      if(index == undefined || index == null || index.length == 0)   throw "input should not be undefined or null"
+      if(isNaN(index))                                               throw "input should be number"
+        /**
+         * @description If index of node is larger that size then return null.
+         */
+        if (index > this.size) {
+          return null;
+        }
+
+        let current = this.head;
+          for (let i = 0; i < index; i++) {
+            current = current.next;
+          }
+        console.log(`Data at Position ${index} =  ` +current.data+`\n`);
+    }
+    catch(e){
+        return e;
     }
 
-    let current = this.head;
-    for (let i = 0; i < index; i++) {
-      current = current.next;
-    }
-    console.log(`Data at Position ${index} =  ` +current.data);
   }
  
   //------------------------------------printing----------------------
@@ -194,7 +244,7 @@ class UnOrderedLinkList {
       str = str + current.data + " ";
       current = current.next;
     }   
-    console.log("Size of List = " + this.size);
+    console.log("\nLength of List = " + this.size);
     // return str;
     fs.writeFileSync(__dirname + "/TextFiles/UnOrderedList.txt", str, "utf-8");
     return str;
