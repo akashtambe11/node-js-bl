@@ -257,7 +257,7 @@ class OrderedLinkList {
   }
   //------------------------------------printing---------------------------
   /**
-   * @description Print the LinkList
+   * @description Print the OrderedLinkList
    */
   printLinkList() {
     let current = this.head, str = "", sortedStr = "";
@@ -274,9 +274,33 @@ class OrderedLinkList {
     fs.writeFileSync(__dirname + "/TextFiles/OrderedList.txt", str, "utf-8");
     return str;
   }
+  /**
+   * @description Size of LinkList
+   */
+  getSize(){
+    return this.size;
+  }
+ /**
+  * @description Following Print Function will use for Hashing.js File
+  */
+
+  hashPrintLinkList() {
+    let current = this.head, str = "", sortedStr = "";
+
+    while (current != null) {
+      // console.log(current.data);
+      str = str + current.data + " ";
+      current = current.next;
+    }   
+    console.log("\nLength of List = " + this.size);
+    
+    fs.writeFileSync(__dirname + "/TextFiles/HashingFile.txt", str, "utf-8");
+    return str;
+  }
 }
+
 /**
- * @description Create object of
+ * @description Create object of to export orderLinkList class
  */
 module.exports = new OrderedLinkList();
 

@@ -1,13 +1,15 @@
 var util = require('../Utility/DSorderedList');
 var algoUtil = require('../Utility/AlgorithmUtility');
-var read = require('readline-sync');
-var fs = require('fs');
+
 
 
 orderedList = () => {
     var textData = util.fileReadOL();
 
     console.log("Text file contains following data : \n"+textData);
+    /**
+     * @description .map function used to convert each number in integer
+     */
     var arrData = textData.split(" ").map(function(item) {
         return parseInt(item, 10);
     }); 
