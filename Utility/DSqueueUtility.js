@@ -44,35 +44,37 @@ class ArrayQueue {
         }
     }
 
-    bankCounter(people, amount) {
+    bankCounter(people, bankAmount) {
 
-        let totalAmmount = amount;
+        var totalAmmount = bankAmount, money, count = 1;
         //for loop for make a queue
         for(let i = 0; i < people; i++){
             this.enqueue(i);
         }
         while(people > 0) {
-            console.log("Enter your choice");
-            var choice = parseInt(algoUtil.integerInput());
-
+            console.log(`PERSON: ${count} \n`);
+            
             console.log("1. Deposit Money");
             console.log("2. Withdraw Money");
+
+            console.log("\nEnter your choice");
+            var choice = parseInt(algoUtil.integerInput());
             
             switch(choice){
                 case 1:
-                    console.log("Enter money to Deposit");
-                    let money = parseInt(algoUtil.integerInput());
-                    this.depositMoney(amount, money)
+                    console.log("\nEnter money to Deposit");
+                    money = parseInt(algoUtil.integerInput());
+                    this.depositMoney(totalAmmount, money)
                     break;
                 
                 case 2:
-                    console.log("Enter money to Withdraw");
-                    let money = parseInt(algoUtil.integerInput());
-                    this.withdrawMoney(amount, money)
+                    console.log("\nEnter money to Withdraw");
+                    money = parseInt(algoUtil.integerInput());
+                    this.withdrawMoney(totalAmmount, money)
                     break;
                 
                 default:
-                    console.log("Invalid Input (Range 1 - 2)");
+                    console.log("\nInvalid Input (Range 1 - 2)");
                     break;
                          
             }
@@ -81,16 +83,20 @@ class ArrayQueue {
         }
 
     }
-    //Code remaining++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    depositMoney(amount, money) {
-        amount = amount + money;
-        console.log("Updated Ammount of Bank: "+amount);
-        
+    depositMoney(totalAmmount, money) {
+        totalAmmount = totalAmmount + money;
+        console.log("\nUpdated Ammount of Bank: "+totalAmmount);
 
     }
     
-    withdrawMoney(amount, money) {
-
+    withdrawMoney(totalAmmount, money) {
+        if(totalAmmount >= money){
+            totalAmmount = totalAmmount - money;
+            console.log("\nUpdated Ammount of Bank: "+totalAmmount);
+        }else{
+            console.log("\nInsufficient Balance in Bank");
+            
+        }
     }
 
 
