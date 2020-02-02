@@ -12,15 +12,17 @@ coupon(size){
 
     try{
 
-        /**
-         * @description To handle exception and if found then trow specific custom error.
-         */
-        if(size == null)            throw "Null input are not allowed"
-        if(size == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(size))             throw "String input is not allowed"
-        if(size == 0)               throw "Zero input is not allowed"
-        
-        /**
+            /**
+             * @description To handle exception and if found then trow specific custom error.
+             */
+            if(size == undefined || size == null || size.length == 0)    throw "input should not be undefined or null"
+            if(isNaN(size))                                              throw "input should be number"               
+      
+    }
+    catch(e){
+        return e;
+    }
+      /**
          * @description array is initialized with a size of 0.
          * @var {Array} array.
          */
@@ -61,10 +63,6 @@ coupon(size){
             count++; 
          }
          return count;
-    }
-    catch(e){
-        return e;
-    }
 },
 
 /**
@@ -81,51 +79,50 @@ gamblerSimulator(stakes, goals, trials){
 
     try{
 
-        /**
-         * @description To handle exception and if found then trow specific custom error.
-         */
-        if(stakes == null || goals == null || trials == null)      throw "Null input are not allowed"
-        if(stakes == 'undefined' || goals == 'undefined' || trials == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(stakes) || isNaN(goals) || isNaN(trials))         throw "String input is not allowed"
-        if(stakes == 0 || goals == 0 || trials == 0)               throw "Zero input is not allowed"
+            /**
+             * @description To handle exception and if found then trow specific custom error.
+             */
+            if(stakes == undefined || goals == undefined || trials == undefined || stakes == null ||goals == null || trials == null || stakes.length == 0 || goals.length == 0 || trials.length == 0)    
+                                                                            throw "input should not be undefined or null"
+            if(isNaN(stakes) || isNaN(goals) || isNaN(trials))                throw "input should be number"
         
-        /**
-         * @description bet and win is initialized with 0.
-         * @var {number} bet, win.
-        */
-        var bet = 0;
-        var win = 0;
-
-        /**
-         * @description To perform loop until it reaches to trail value
-         */
-        for(let i = 0; i < trials; i++){
-            var cash = stakes;
-            while(cash > 0 && cash < goals ){
-                bet++;
-
-        /**
-         * @description To get random number to increase or decrease cash amount
-         */
-                if(Math.random() < 0.5)
-                    cash++;
-                    else
-                    cash--;
-            }
-        if(cash == goals)
-            win++;
-        
-        }
-
-        /**
-         * @description return values in the form of array
-         *     [index 1,   index 2,               index 3          ]
-         */ 
-        return [win, (win/trials)*100, ((trials - win)/trials)*100 ];
     }
     catch(e){
         return e;
     }
+        /**
+         * @description bet and win is initialized with 0.
+         * @var {number} bet, win.
+        */
+       var bet = 0;
+       var win = 0;
+
+       /**
+        * @description To perform loop until it reaches to trail value
+        */
+       for(let i = 0; i < trials; i++){
+           var cash = stakes;
+           while(cash > 0 && cash < goals ){
+               bet++;
+
+       /**
+        * @description To get random number to increase or decrease cash amount
+        */
+               if(Math.random() < 0.5)
+                   cash++;
+                   else
+                   cash--;
+           }
+       if(cash == goals)
+           win++;
+       
+       }
+
+       /**
+        * @description return values in the form of array
+        *     [index 1,   index 2,               index 3          ]
+        */ 
+       return [win, (win/trials)*100, ((trials - win)/trials)*100 ];
         
 },
 
@@ -135,36 +132,33 @@ harmonic(nthNumber) {
 
     try{
 
-        /**
-        *@description To handle exception and if found then trow specific custom error.
-        */
-        if(nthNumber == null)            throw "Null input are not allowed"
-        if(nthNumber == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(nthNumber))             throw "String input is not allowed"
-        if(nthNumber == 0)               throw "Zero input is not allowed"
-
+            /**
+            *@description To handle exception and if found then trow specific custom error.
+            */
+            if(nthNumber == undefined || nthNumber == null || nthNumber.length == 0)    throw "input should not be undefined or null"
+            if(isNaN(nthNumber))                                                        throw "input should be number"   
+       
     }    
     catch(e){
         return e;
     }
-
-        /**
+     /**
          * @description sum is initialized with 0.
          * @var {number} sum.
         */
-        var sum = 0;
+       var sum = 0;
 
-        /**
-         * @description To handle exception and if found then trow specific custom error. 
-         */
-        while(nthNumber < 0){
-            console.log("Enter POSITIVE nth number Again");
-            var nthNumber = algoUtil.integerInput();
-        }
-        for(let i = 1; i <= nthNumber; i++){
-            sum = sum + (1/i);
-        }
-        return sum;
+       /**
+           * @description To handle exception and if found then trow specific custom error. 
+           */
+       while(nthNumber < 0){
+           console.log("Enter POSITIVE nth number Again");
+           var nthNumber = algoUtil.integerInput();
+       }
+       for(let i = 1; i <= nthNumber; i++){
+           sum = sum + (1/i);
+       }
+       return sum;
 
 },
 
@@ -175,16 +169,14 @@ isLeapYear(year){
             /**
             *@description To handle exception and if found then trow specific custom error.
             */
-            if(year == null)            throw "Null input are not allowed"
-            if(year == 'undefined')     throw "Undefined values are not allowed"
-            if(isNaN(year))             throw "String input is not allowed"
-            if(year == 0)               throw "Zero input is not allowed"
+            if(year == undefined || year == null || year.length == 0)              throw "input should not be undefined or null"
+            if(isNaN(year))                                                        throw "input should be number"     
             
     }
     catch(e){
         return e;
     }
-        /**
+    /**
          * @description Loop will perform until user enter a year which is geater than 3
          * and less than 9999. 
          */
@@ -213,12 +205,14 @@ pFactors(num){
             /**
             *@description To handle exception and if found then trow specific custom error.
             */
-            if(num.length == 0)       throw "Null input are not allowed"
-            if(num == 'undefined')    throw "Undefined values are not allowed"
-            if(isNaN(num))            throw "String input is not allowed"
-            if(num == 0)              throw "Zero input is not allowed"
+           if(num === undefined || num == null || num.length == 0)              throw "input should not be undefined or null"
+           if(isNaN(num))                                                      throw "input should be number"   
         
-        /**
+    }
+    catch(e){
+        console.log("Error : "+e);      
+    }
+     /**
          * @description Loop will contiune until num is divisible by i itration value,
          * and if condition get satisfy then it will print current 'i' value,
          * also num will be divide by same 'i' value
@@ -235,12 +229,10 @@ pFactors(num){
          * @description  Case 1 : If number came after while loop then it will be 2
          *               Case 2 : if not then number will always greater than 2
          */
-        if (num > 2)
+        if (num > 2){
             console.log(num);
-    }
-    catch(e){
-        console.log("Error : "+e);      
-    }
+        }
+            
 },
 
 
@@ -249,12 +241,13 @@ pFactors(num){
 
 replaceString(str, name){
     try{ 
-        /**
-        *@description To handle exception and if found then trow specific custom error.
-        */
-        if(str == "" || name == "")                    throw "Null input are not allowed"
-        if(str == 'undefined' || name == 'undefined')  throw "Undefined values are not allowed"
-        if(!isNaN(str) || !isNaN(name))                throw "Number input is not allowed"
+            /**
+            *@description To handle exception and if found then trow specific custom error.
+            */
+            if(str == undefined || name == undefined || str == null || name == null || str.length == 0 || name.length == 0)                 
+                                                                               throw "input should not be undefined or null"
+            if(!(/^[a-zA-Z]+$/.test(str)) || !(/^[a-zA-Z]+$/.test(name)))      throw "input should be string"
+    
        
     }
     catch(e){
@@ -274,6 +267,7 @@ replaceString(str, name){
          */
         var newString = str.replace("<<UserName>>", name);
         return newString;
+       
 },
 
 /*-----------------Sum Of Three Integer Zero------------------*/
@@ -317,47 +311,47 @@ sumOfThreeIntZero(array, size){
 twoDimArrray(row, column){
 
     try{
-        /**
-        *@description To handle exception and if found then trow specific custom error.
-        */
-        if(row == null || column == null)      throw "Null input are not allowed"
-        if(row == 'undefined' || column == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(row) || isNaN(column))         throw "String input is not allowed"
-        if(row == 0 || column == 0)               throw "Zero input is not allowed"
+            /**
+            *@description To handle exception and if found then trow specific custom error.
+            */
+            if(row == undefined || row == null || row.length == 0 || column == undefined || column == null || column.length == 0)    
+                                                                                        throw "input should not be undefined or null"
+            if(isNaN(row) || isNaN(column))                                          throw "input should be number"   
+       
     }
     catch(e){
         return e;
     }
-       
     /**
-     * @description array is initialized with a size of 0.
-     * @var {Array} array.
-     */
-    var array = [];
-    for(let i = 0; i < row ; i++){
-        array[i]=[];
-    }
-    
-    /**
-     * @description First loop will run until row value and second loop will run until
-     * end of column value
-     */
-    for(let i = 0; i < row; i++){
-        for(let j = 0; j < column; j++){
-            console.log("Enter ["+i+" "+j+"] Element");
-            array[i][j] = algoUtil.integerInput();
+         * @description array is initialized with a size of 0.
+         * @var {Array} array.
+         */
+        var array = [];
+        for(let i = 0; i < row ; i++){
+            array[i]=[];
         }
-    }
-    /**
-     * @description To print all entered elements.
-     */
-    console.log("Entered Array is = ")
-    for(let i = 0; i < row; i++){
-        for(let j = 0; j < column; j++){
-            console.log(array[i][j]+" ");
+        
+        /**
+         * @description First loop will run until row value and second loop will run until
+         * end of column value
+         */
+        for(let i = 0; i < row; i++){
+            for(let j = 0; j < column; j++){
+                console.log("Enter ["+i+" "+j+"] Element");
+                array[i][j] = algoUtil.integerInput();
+            }
         }
+        /**
+         * @description To print all entered elements.
+         */
+        console.log("Entered Array is = ")
+        for(let i = 0; i < row; i++){
+            for(let j = 0; j < column; j++){
+                console.log(array[i][j]+" ");
+            }
 
-    }
+        }
+    
 },
 
 }

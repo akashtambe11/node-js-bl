@@ -2,23 +2,21 @@ var assert = require('chai').assert;
 var util = require('../Utility/FunctionalUtility');
 
 describe('Functional Programs : ReplaceString.js File', function(){
-    
-    it('Input is executed (Positive)', function(){
-        let a = util.replaceString("Hello '<<UserName>>', How are you?", "Akash");
-        assert.equal("Hello 'Akash', How are you?", a);
+  
+    it('should be pass', () =>{
+        var a = util.replaceString('abc','xyz');
     });
-    it('Value should not be null', function(){
-        let a = util.replaceString("", "");
-        assert.equal("Null input are not allowed", a);
+    it('should not be undefined', () => {
+        var b = util.replaceString(undefined, undefined);
+        assert.equal("input should not be undefined or null", b);
     });
-    it('Value should not be undefined', function(){
-        let a = util.replaceString("undefined","undefined");
-        assert.equal("Undefined values are not allowed", a);
+    it('should not be null', () => {
+        var c = util.replaceString('', '');
+        assert.equal("input should not be undefined or null", c);
     });
-    it('Value should not be number', function(){
-        let a = util.replaceString(5, 25);
-        assert.equal("Number input is not allowed", a);
+    it('should be string', () => {
+        var d = util.replaceString(12, 25);
+        assert.equal("input should be string", d)
     });
-    
     
 });

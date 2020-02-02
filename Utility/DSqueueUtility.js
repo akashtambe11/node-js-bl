@@ -43,16 +43,16 @@ class ArrayQueue {
             }
         }
     }
-
+    //Bank cash counter
     bankCounter(people, bankAmount) {
 
-        var totalAmmount = bankAmount, money, count = 1;
+        var totalAmmount = bankAmount, money, personCount = 1;
         //for loop for make a queue
         for(let i = 0; i < people; i++){
             this.enqueue(i);
         }
         while(people > 0) {
-            console.log(`PERSON: ${count} \n`);
+            console.log(`TRANSACTION FOR PERSON: ${personCount} \n`);
             
             console.log("1. Deposit Money");
             console.log("2. Withdraw Money");
@@ -79,6 +79,8 @@ class ArrayQueue {
                          
             }
             people--;
+            personCount++;
+
   
         }
 
@@ -101,27 +103,6 @@ class ArrayQueue {
 
 
 }
-
-
-
-
-
-
-
-
-
-
-// let q = new ArrayQueue();
-
-// q.enqueue(11);
-// q.enqueue(12);
-// q.enqueue(13);
-// q.enqueue(14);
-// q.enqueue(15);
-
-// q.dequeue();
-
-// q.printQueue();
 
 
 module.exports = new ArrayQueue();

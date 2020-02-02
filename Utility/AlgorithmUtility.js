@@ -30,10 +30,9 @@ arrayIntElementInput(size){
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(size == null)            throw "Null input are not allowed"
-        if(size == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(size))             throw "String input is not allowed"
-        if(size == 0)               throw "Zero input is not allowed"
+        if(size == undefined || size == null || size.length == 0)              throw "input should not be undefined or null"
+        if(isNaN(size))                                                        throw "input should be number"     
+        
     }
     catch(e){
         return e;
@@ -52,10 +51,9 @@ arrayStrElementInput(size){
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(size == null)            throw "Null input are not allowed"
-        if(size == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(size))             throw "String input is not allowed"
-        if(size == 0)               throw "Zero input is not allowed"
+        if(size == undefined || size == null || size.length == 0)              throw "input should not be undefined or null"
+        if(isNaN(size))                                                        throw "input should be number"     
+        
     }
     catch(e){
         return e;
@@ -73,10 +71,9 @@ isPrime(num){
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(num == null)            throw "Null input are not allowed"
-        if(num == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(num))             throw "String input is not allowed"
-        if(num == 0)               throw "Zero input is not allowed"
+        if(num == undefined || num == null || num.length == 0)              throw "input should not be undefined or null"
+        if(isNaN(num))                                                        throw "input should be number"     
+        
     }
     catch(e){
         return e;
@@ -101,10 +98,9 @@ isPalindrome(num){
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(num == null)            throw "Null input are not allowed"
-        if(num == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(num))             throw "String input is not allowed"
-        if(num == 0)               throw "Zero input is not allowed"
+        if(num == undefined || num == null || num.length == 0)              throw "input should not be undefined or null"
+        if(isNaN(num))                                                        throw "input should be number"     
+        
     }
     catch(e){
         return e;
@@ -131,11 +127,11 @@ isPalindrome(num){
 isAnagram(str1, str2){
    try{
         
-        if(str1 == null || str2 == null)               throw "Null values are not allowed"
-        if(str1 == 'undefined' || str2 == 'undefined') throw "Undefined values are not allowed"
-        if(!isNaN(str1) && !isNaN(str1))               throw "Number input is not allowed"
-   
-        
+    if(str1 == undefined || str2 == undefined || str1 == null || str2 == null || str1.length == 0 || str2.length == 0)                 
+                            throw "input should not be undefined or null"
+    if(!(/^[a-zA-Z]+$/.test(str1)) || !(/^[a-zA-Z]+$/.test(str2)))      
+                            throw "input should be string"
+
         //To removing all spaces
         var str1trim = str1.replace(/\s/g,'');
         var str2trim = str2.replace(/\s/g,'');
@@ -164,10 +160,9 @@ toBinary(num){
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(num == null)            throw "Null input are not allowed"
-        if(num == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(num))             throw "String input is not allowed"
-        if(num == 0)               throw "Zero input is not allowed"
+        if(num == undefined || num == null || num.length == 0)              throw "input should not be undefined or null"
+        if(isNaN(num))                                                        throw "input should be number"     
+        
     }
     catch(e){
         return e;
@@ -188,10 +183,10 @@ binarySearchInteger(array, key){
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(array == null || key == null)                   throw "Null input are not allowed"
-        if(array == 'undefined' || key == 'undefined')     throw "Undefined values are not allowed"
-        if(isNaN(key))                                     throw "String input is not allowed"
-        if(array == 0 || key == 0)                         throw "Zero input is not allowed"
+        if(array == undefined || key == undefined || array == null || key == null || array.length == 0 || key.length == 0)    
+                            throw "input should not be undefined or null"
+        if(isNaN(key))                
+                            throw "input should be number"
        
     }
     catch(e){
@@ -226,10 +221,11 @@ binarySearchString(array, key){
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(array == null || key == null)                   throw "Null input are not allowed"
-        if(array == 'undefined' || key == 'undefined')     throw "Undefined values are not allowed"
-        if(!isNaN(key))                                    throw "Number input is not allowed"
-        if(array == 0 || key == 0)                         throw "Zero input is not allowed"
+        if(array == undefined || key == undefined || array == null || key == null || array.length == 0 || key.length == 0)    
+                    throw "input should not be undefined or null"
+        if(!isNaN(key))                
+                    throw "input key should be string"
+
        
     }
     catch(e){
@@ -279,10 +275,11 @@ binSearchStringFile(name){
 /*------------------ Bubble Sort Integer------------------*/
 bubleSortInteger(array){
     try{
-        console.log("==================="+array.length);
-        
+  
         for(let i = 0; i < array.length; i++){
-            if(isNaN(array[i]))      throw "String elements are is not allowed"
+            if(array[i] == undefined || array[i] == null)              
+                                     throw "input should not be undefined or null"
+            if(isNaN(array[i]))      throw "input should be number"
                 
         }
     }
@@ -306,7 +303,9 @@ bubleSortInteger(array){
 bubleSortString(array){
     try{
         for(let i = 0; i <= array.length; i++){
-            if(!isNaN(array[i]))     throw "Number elements are is not allowed"
+            if(array[i] == undefined || array[i] == null)              
+                                     throw "input should not be undefined or null"
+            if(!isNaN(array[i]))     throw "input should be string"
         }
     }
     catch(e){
@@ -369,8 +368,12 @@ dayOfWeek(d, m, y){
 /*----------------- Insertion Sort Integer----------------*/
 insertionSortInteger(array){
     try{
-        for(let i = 0; i <= array.length; i++){
-            if(isNaN(array[i]))     throw "String elements are is not allowed"
+        
+        for(let i = 0; i < array.length; i++){
+            if(array[i] == undefined || array[i] == null)              
+                                     throw "input should not be undefined or null"
+            if(isNaN(array[i]))      throw "input should be number"
+             
         }
     }
     catch(e){
@@ -394,7 +397,9 @@ insertionSortInteger(array){
 insertionSortString(array){
     try{
         for(let i = 0; i <= array.length; i++){
-            if(!isNaN(array[i]))     throw "Number elements are is not allowed"
+            if(array[i] == undefined || array[i] == null)              
+                                     throw "input should not be undefined or null"
+            if(!isNaN(array[i]))     throw "input should be string"
         }
     }
     catch(e){

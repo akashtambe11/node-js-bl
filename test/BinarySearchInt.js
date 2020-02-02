@@ -3,25 +3,23 @@ var util = require('../Utility/AlgorithmUtility');
 
 describe('Algorithm Programs : BinarySearchInt.js File', function(){
     
-    it('Program Execution (Positive)', function(){
+    it('should be pass', () =>{
         let a = util.binarySearchInteger([2, 4, 8, 7, 9, 1], 4);
-        assert.equal(true, a);
     });
-    it('Program Execution (Negative)', function(){
+    it('should not be pass', function(){
         let a = util.binarySearchInteger([2, 4, 8, 7, 9, 1], 5);
         assert.equal(false, a);
     });
-    it('Value should not be null', function(){
-        let a = util.binarySearchInteger(null, null);
-        assert.equal("Null input are not allowed", a);
+    it('should not be undefined', () => {
+        var b = util.binarySearchInteger(undefined, undefined);
+        assert.equal("input should not be undefined or null", b);
     });
-    it('Value should not be undefined', function(){
-        let a = util.binarySearchInteger("undefined", "undefined");
-        assert.equal("Undefined values are not allowed", a);
+    it('should not be null', () => {
+        var c = util.binarySearchInteger(null, null);
+        assert.equal("input should not be undefined or null", c);
     });
-    it('Value should not be zero', function(){
-        let a = util.binarySearchInteger([], 0);
-        assert.equal("Zero input is not allowed", a);
-    });
-
+    it('should be number', () => {
+        var d = util.binarySearchInteger(['abc', 'lmn', 'pqr'], 'xyz');
+        assert.equal("input should be number", d)
+    })
 });

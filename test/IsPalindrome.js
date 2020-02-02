@@ -3,17 +3,20 @@ var util = require('../Utility/AlgorithmUtility');
 
 describe('Algorithm Programs : () : isPalindrome()', function(){
    
-    it('Value should not be null', function(){
-        let a = util.isPalindrome(null);
-        assert.equal("Null input are not allowed", a);
+    it('should be pass', () =>{
+        var a = util.isPalindrome();
     });
-    it('Value should not be undefined', function(){
-        let a = util.isPalindrome("undefined");
-        assert.equal("Undefined values are not allowed", a);
+    it('should not be undefined', () => {
+        var b = util.isPalindrome(undefined);
+        assert.equal("input should not be undefined or null", b);
     });
-    it('Value should not be zero', function(){
-        let a = util.isPalindrome(0);
-        assert.equal("Zero input is not allowed", a);
+    it('should not be null', () => {
+        var c = util.isPalindrome(null);
+        assert.equal("input should not be undefined or null", c);
     });
+    it('should be number', () => {
+        var d = util.isPalindrome('abc');
+        assert.equal("input should be number", d)
+    })
     
 });

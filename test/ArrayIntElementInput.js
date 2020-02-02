@@ -1,19 +1,21 @@
 var assert = require('chai').assert;
 var util = require('../Utility/AlgorithmUtility');
 
-describe('Algorithm Programs : () :arrayStrElementInput()', function(){
-   
-    it('Value should not be null', function(){
-        let a = util.arrayStrElementInput(null);
-        assert.equal("Null input are not allowed", a);
+describe('Algorithm Programs : () :arrayIntElementInput()', function(){
+    it('should be pass', () =>{
+        var a = util.arrayIntElementInput();
     });
-    it('Value should not be undefined', function(){
-        let a = util.arrayStrElementInput("undefined");
-        assert.equal("Undefined values are not allowed", a);
+    it('should not be undefined', () => {
+        var b = util.arrayIntElementInput(undefined);
+        assert.equal("input should not be undefined or null", b);
     });
-    it('Value should not be zero', function(){
-        let a = util.arrayStrElementInput(0);
-        assert.equal("Zero input is not allowed", a);
+    it('should not be null', () => {
+        var c = util.arrayIntElementInput(null);
+        assert.equal("input should not be undefined or null", c);
     });
+    it('should be number', () => {
+        var d = util.arrayIntElementInput('abc');
+        assert.equal("input should be number", d)
+    })
     
 });

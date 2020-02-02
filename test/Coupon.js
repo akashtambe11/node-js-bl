@@ -3,17 +3,20 @@ var util = require('../Utility/FunctionalUtility');
 
 describe('Functional Programs : Coupon.js File', function(){
    
-    it('Value should not be null', function(){
-        let a = util.coupon(null);
-        assert.equal("Null input are not allowed", a);
+    it('should be pass', () =>{
+        var a = util.coupon();
     });
-    // it('Value should not be undefined', function(){
-    //     let a = util.coupon(undefined);
-    //     assert.equal("Undefined values are not allowed", a);
-    // });
-    it('Value should not be zero', function(){
-        let a = util.coupon(0);
-        assert.equal("Zero input is not allowed", a);
+    it('should not be undefined', () => {
+        var b = util.coupon(undefined);
+        assert.equal("input should not be undefined or null", b);
     });
+    it('should not be null', () => {
+        var c = util.coupon(null);
+        assert.equal("input should not be undefined or null", c);
+    });
+    it('should be number', () => {
+        var d = util.coupon('abc');
+        assert.equal("input should be number", d)
+    })
     
 });

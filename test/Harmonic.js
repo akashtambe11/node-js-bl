@@ -3,25 +3,20 @@ var util = require('../Utility/FunctionalUtility');
 
 describe('Functional Programs : HarmonicNumber.js File', function(){
     
-    it('Input is executed (Positive)', function(){
-        let a = util.harmonic(5);
-        assert.equal(2.283333333333333, a);
+    it('should be pass', () =>{
+        var a = util.harmonic(5);
     });
-    it('Value should not be null', function(){
-        let a = util.harmonic(null);
-        assert.equal("Null input are not allowed", a);
+    it('should not be undefined', () => {
+        var b = util.harmonic(undefined);
+        assert.equal("input should not be undefined or null", b);
     });
-    it('Value should not be undefined', function(){
-        let a = util.harmonic("undefined");
-        assert.equal("Undefined values are not allowed", a);
+    it('should not be null', () => {
+        var c = util.harmonic(null);
+        assert.equal("input should not be undefined or null", c);
     });
-    it('Value should not be string', function(){
-        let a = util.harmonic("abc");
-        assert.equal("String input is not allowed", a);
-    });
-    it('Value should not be zero', function(){
-        let a = util.harmonic(0);
-        assert.equal("Zero input is not allowed", a);
-    });
+    it('should be number', () => {
+        var d = util.harmonic('abc');
+        assert.equal("input should be number", d)
+    })
     
 });
