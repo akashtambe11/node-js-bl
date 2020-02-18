@@ -4,7 +4,7 @@ var algoUtil = require('../Utility/AlgorithmUtility');
 stackMain = () => {
 
     while(true){
-        console.log("1. Push (Add Element in Stack)");
+        console.log("\n1. Push (Add Element in Stack)");
         console.log("2. Pop (Remove Element in Stack)");
         console.log("3. Data on Peek");
         console.log("4. Print Stack");

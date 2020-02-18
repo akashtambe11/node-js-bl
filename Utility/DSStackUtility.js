@@ -3,10 +3,19 @@ class ArrayStack {
         this.stack = new Array();
         this.top = -1;
     }
-    push(value){
+    push(value){ 
+        try{ 
+     
+            if(value == undefined || value == null || value.length == 0)  throw "input should not be undefined or null"
+            if(isNaN(value))                                              throw "input should be number"
+           
             this.top++;
             this.stack[this.top] = value;
-        
+             
+        }
+        catch(e){
+            return e;
+        } 
     }
 
     pop(){
@@ -39,6 +48,16 @@ class ArrayStack {
     }
 
     balencePara(str){
+        try{ 
+            if(str == undefined || str == null || str.length == 0)  throw "input should not be undefined or null"
+            if(!(/^[a-zA-Z]+$/.test(str)))                          throw "input should be string"
+         
+          }
+          catch(e){
+              return e;
+          }  
+
+
         for(let i = 0; i < str.length; i++){
 
             let letter = str.charAt(i);

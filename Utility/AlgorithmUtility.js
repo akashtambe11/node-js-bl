@@ -161,7 +161,7 @@ toBinary(num){
          * @description To handle exception and if found then trow specific custom error.
          */
         if(num == undefined || num == null || num.length == 0)              throw "input should not be undefined or null"
-        if(isNaN(num))                                                        throw "input should be number"     
+        if(isNaN(num))                                                      throw "input should be number"     
         
     }
     catch(e){
@@ -258,9 +258,9 @@ binarySearchString(array, key){
 binSearchStringFile(name){
     try{
         
-        if(name == "")                 throw "Null values are not allowed"
-        if(name == 'undefined')        throw "Undefined values are not allowed"
-        if(!isNaN(name))             throw "Number input is not allowed"
+        if(name == undefined || name == null || name.length == 0 || name == '')                 
+                                             throw "input should not be undefined or null"
+        if(!(/^[a-zA-Z]+$/.test(name)))      throw "input should be string"
     }
     catch(e){
         console.log(e); 
@@ -335,20 +335,62 @@ bubSortIntegerFile(){
 
 /*-----------------------Day of Week --------------------*/
 isRightDate(dateInput){
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(dateInput == undefined || dateInput == null || dateInput.length == 0)          throw "input should not be undefined or null"
+        if(isNaN(dateInput))                                                      throw "input should be number"     
+        
+    }
+    catch(e){
+        return e;
+    }
+    
     while(dateInput < 1 || dateInput > 31){
         console.log("Enter Proper Date (Range: 1 - 31)");
         var dateInput = this.integerInput();
     }
     return dateInput;
 },
+
+
 isRightMonth(monthInput){
+
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(monthInput == undefined || monthInput == null || monthInput.length == 0)          throw "input should not be undefined or null"
+        if(isNaN(monthInput))                                                      throw "input should be number"     
+        
+    }
+    catch(e){
+        return e;
+    }
+
     while(monthInput < 1 || monthInput > 12){
         console.log("Enter Proper Month (Range: 1 - 12)");
         var monthInput =  this.integerInput();
     }
     return monthInput;
 },
+
+
 isRighYear(yearInput){
+
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(yearInput == undefined || yearInput == null || yearInput.length == 0)          throw "input should not be undefined or null"
+        if(isNaN(yearInput))                                                      throw "input should be number"     
+        
+    }
+    catch(e){
+        return e;
+    }
+
     while(yearInput < 1582 || yearInput > 9999){
         console.log("Enter Proper Year (Range: 1582 - 9999)");
         var yearInput =  this.integerInput();
@@ -356,6 +398,20 @@ isRighYear(yearInput){
     return yearInput;
 },
 dayOfWeek(d, m, y){
+
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(d == undefined || d == null || d.length == 0 || m == undefined || m == null || m.length == 0 || y == undefined || y == null || y.length == 0)          
+                                    throw "input should not be undefined or null"
+        if(isNaN(d) || isNaN(m) || isNaN(y))              
+                                    throw "input should be number"     
+        
+    }
+    catch(e){
+        return e;
+    }
     y0 = y - (14 - m) / 12;
     x = y0 + y0 / 4 - y0 / 100 + y0 / 400;
     m0 = m + 12 * ((14 - m) / 12) - 2;
@@ -428,6 +484,17 @@ InsSortIntegerFile(){
 },
 /*------------------ Merge Sort String--------------------*/
 mergeSortString(arr){
+    
+    try{
+        for(let i = 0; i <= arr.length; i++){
+            if(arr[i] == undefined || arr[i] == null)              
+                                     throw "input should not be undefined or null"
+            if(!isNaN(arr[i]))       throw "input should be string"
+        }
+    }
+    catch(e){
+        return e;
+    }
    
     if(arr.length < 2) return arr;
     
@@ -467,16 +534,17 @@ mergeSortString(arr){
 },
 
 /*--------------- Prime Number (1 - 1000)-----------------*/
-primeRange(){
+primeRange(range){
     var primeArray = [];
-    console.log("Prime number 0f Range 0 to 1000")
-    for(let i = 0; i <= 1000; i++){
+    console.log(`Prime number 0f Range 0 to ${range}`)
+    
+    for(let i = 0; i <= range; i++){
        var primePass = this.isPrime(i);
        //[index 1 = true & index 1 = num (Used index 0 as we need only boolean Value)]
        if(primePass[0]){
         //
             primeArray.push(primePass[1])
-            console.log(i);
+            console.log(i); 
        }
     }
     //It will Call isPrimePalindrome method(Whole Array is Passed)
@@ -486,9 +554,21 @@ primeRange(){
 
 /*-------------------- Vending Machin -------------------*/
 vendingMachineCal(noteArr, money){
-    var i = 0, notes = 0, numOfNotes = 0;
+    try{
+        /**
+         * @description To handle exception and if found then trow specific custom error.
+         */
+        if(money == undefined || money == null || money.length == 0)          throw "input should not be undefined or null"
+        if(isNaN(money))                                                      throw "input should be number"     
+        
+    }
+    catch(e){
+        return e;
+    }
+    var i = 0, notes = 0; 
  
     while(money > 0){
+        var numOfNotes = 0;
         notes =Math.floor(money / noteArr[i]);
         remMoney = money % noteArr[i];
         

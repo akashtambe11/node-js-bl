@@ -8,6 +8,16 @@ class ArrayQueue {
     }
 
     enqueue(value) {
+        try{ 
+     
+            if(value == undefined || value == null || value.length == 0)   throw "input should not be undefined or null"
+            if(isNaN(value))                                             throw "input should be number"
+             
+        }
+        catch(e){
+            return e;
+        } 
+
         if(this.front == -1 && this.rear == -1) {
             this.front = this.rear = 0;
             this.queue[this.rear] = value;
@@ -45,6 +55,18 @@ class ArrayQueue {
     }
     //Bank cash counter
     bankCounter(people, bankAmount) {
+
+        try{ 
+     
+            if(people == undefined || people == null || people.length == 0 || bankAmount == undefined || bankAmount == null || bankAmount.length == 0)   
+                                                                throw "input should not be undefined or null"
+            if(isNaN(people) || isNaN(bankAmount))              throw "input should be number"
+           
+             
+        }
+        catch(e){
+            return e;
+        } 
 
         var totalAmmount = bankAmount, money, personCount = 1;
         //for loop for make a queue
@@ -86,12 +108,35 @@ class ArrayQueue {
 
     }
     depositMoney(totalAmmount, money) {
+
+        try{ 
+     
+            if(totalAmmount == undefined || totalAmmount == null || totalAmmount.length == 0 || money == undefined || money == null || money.length == 0)   
+                                                                throw "input should not be undefined or null"
+            if(isNaN(totalAmmount) || isNaN(money))             throw "input should be number"
+               
+        }
+        catch(e){
+            return e;
+        } 
         totalAmmount = totalAmmount + money;
         console.log("\nUpdated Ammount of Bank: "+totalAmmount);
 
     }
     
     withdrawMoney(totalAmmount, money) {
+
+        try{ 
+     
+            if(totalAmmount == undefined || totalAmmount == null || totalAmmount.length == 0 || money == undefined || money == null || money.length == 0)   
+                                                                throw "input should not be undefined or null"
+            if(isNaN(totalAmmount) || isNaN(money))             throw "input should be number"
+           
+             
+        }
+        catch(e){
+            return e;
+        } 
         if(totalAmmount >= money){
             totalAmmount = totalAmmount - money;
             console.log("\nUpdated Ammount of Bank: "+totalAmmount);

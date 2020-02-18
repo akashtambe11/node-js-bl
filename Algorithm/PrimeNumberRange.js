@@ -14,7 +14,11 @@ var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
 primeRangeMain = () => {
-var paliArray = util.primeRange();
+
+console.log("Enter the Range 0 - ? ");
+var range = util.integerInput();
+
+var paliArray = util.primeRange(range);
 console.log(paliArray);
 }
 primeRangeMain();

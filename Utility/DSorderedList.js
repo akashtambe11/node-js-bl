@@ -33,7 +33,7 @@ class OrderedLinkList {
     try{ 
      
         if(data == undefined || data == null || data.length == 0)   throw "input should not be undefined or null"
-        if(isNaN(data))                                            throw "input should be number"
+        if(isNaN(data))                                             throw "input should be number"
        
         this.head = new node(data, this.head);
         this.size++;
@@ -52,7 +52,7 @@ class OrderedLinkList {
     try{ 
     
         if(data == undefined || data == null || data.length == 0)   throw "input should not be undefined or null"
-        if(isNaN(data))                                           throw "input should be number"
+        if(isNaN(data))                                             throw "input should be number"
    
         const endNode = new node(data);
           if (this.head == null) {
@@ -80,7 +80,7 @@ class OrderedLinkList {
     try{ 
         if(data == undefined || data == null || data.length == 0 || index == undefined || index == null || index.length == 0)
                                                                     throw "input should not be undefined or null"
-        if(isNaN(data) || isNaN(index))                                            throw "input should be number"
+        if(isNaN(data) || isNaN(index))                             throw "input should be number"
   
          /**
          * @description Index should be grater than zero and size;

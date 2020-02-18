@@ -64,7 +64,7 @@ class Hash {
         }
     }
 
-    print(linkList,size){
+    print(linkList, size){
         var str ="";
         for(let i = 0; i < size; i++){
             str = str + linkList[i] + ", ";

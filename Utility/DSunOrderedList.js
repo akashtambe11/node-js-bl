@@ -32,7 +32,7 @@ class UnOrderedLinkList {
   insertAtFirst(data) {
     try{ 
       if(data == undefined || data == null || data.length == 0)  throw "input should not be undefined or null"
-      if(!(/^[a-zA-Z]+$/.test(data)))                             throw "input should be string"
+      if(!(/^[a-zA-Z]+$/.test(data)))                            throw "input should be string"
 
         this.head = new node(data, this.head);
         this.size++;
@@ -40,7 +40,7 @@ class UnOrderedLinkList {
     }
     catch(e){
         return e;
-    } 
+    }  
 
   }
 
@@ -50,7 +50,7 @@ class UnOrderedLinkList {
   insertAtLast(data) {
     try{ 
       if(data == undefined || data == null || data.length == 0)  throw "input should not be undefined or null"
-      if(!(/^[a-zA-Z]+$/.test(data)))                             throw "input should be string"
+      if(!(/^[a-zA-Z]+$/.test(data)))                            throw "input should be string"
         
         const endNode = new node(data);
           if (this.head == null) {
@@ -205,7 +205,6 @@ class UnOrderedLinkList {
     
  }
   
-//-------------------------find data-------------------------------
   /**
    * @description Find data at perticuler index
    */
@@ -213,6 +212,7 @@ class UnOrderedLinkList {
     try{ 
       if(index == undefined || index == null || index.length == 0)   throw "input should not be undefined or null"
       if(isNaN(index))                                               throw "input should be number"
+
         /**
          * @description If index of node is larger that size then return null.
          */
@@ -232,7 +232,7 @@ class UnOrderedLinkList {
 
   }
  
-  //------------------------------------printing----------------------
+
   /**
    * @description Print the LinkList
    */
@@ -250,6 +250,7 @@ class UnOrderedLinkList {
     return str;
   }
 }
+
 /**
  * @description Create object of
  */
