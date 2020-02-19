@@ -1,0 +1,63 @@
+{
+    "Rice": [
+        {
+            "name": "Basmati",
+            "weight": 100,
+            "price": 85
+        },
+    
+        {
+            "name": "Mogara",
+            "weight": 300,
+            "price": 65
+        },
+
+        {
+            "name": "Kolam",
+            "weight": 500,
+            "price": 45
+        }
+    ],
+
+    "Pulses": [
+        {
+            "name": "GreenGram",
+            "weight": 100,
+            "price": 64
+        },
+    
+        {
+            "name": "KidneyBeans",
+            "weight": 300,
+            "price": 54
+        },
+
+        {
+            "name": "ChickPeas",
+            "weight": 500,
+            "price": 44
+        }
+    ],
+
+    "Wheat": [
+        {
+            "name": "VardanWheat",
+            "weight": 100,
+            "price": 60
+        },
+    
+        {
+            "name": "Ashirwad",
+            "weight": 300,
+            "price": 55
+        },
+
+        {
+            "name": "Patanjali",
+            "weight": 500,
+            "price": 35
+        }
+    ]
+   
+
+}
