@@ -3,6 +3,7 @@ var algoUtil = require('../Utility/AlgorithmUtility')
 module.exports = {
 
     primeRange(range){
+        
         var primeArray = [];
         console.log(`Prime number 0f Range 0 to ${range}`)
         
@@ -16,6 +17,6 @@ module.exports = {
             }
         }
         return primePass;
-
     }
+
 }

@@ -1,4 +1,4 @@
-var util = require('../Utility/InventoryData');
+var util = require('../Utility/OopsUtility');
 
 invDataMain = () => {
     util.invData();
