@@ -1,4 +1,4 @@
-var util = require('../Utility/OopsUtility');
+var util = require('../Utility/OopsInventoryManagementUtility');
 var algoUtil = require('../Utility/AlgorithmUtility')
 
 

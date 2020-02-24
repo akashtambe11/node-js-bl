@@ -1,0 +1,80 @@
+{
+    "doctor":
+            [
+                {
+                    "drName": "akash",
+                    "drId": 14,
+                    "speciality": "sergon",
+                    "availability": "BOTH",
+                    "noOfAppointment": 2
+                },
+                {
+                    "drName": "ishan",
+                    "drId": 9,
+                    "speciality": "physiotherapists",
+                    "availability": "AM",
+                    "noOfAppointment": 1
+                },
+                {
+                    "drName": "manali",
+                    "drId": 28,
+                    "speciality": "gynaecologist",
+                    "availability": "PM",
+                    "noOfAppointment": 0
+                },
+                {
+                    "drName": "nandini",
+                    "drId": 21,
+                    "speciality": "dermatologist",
+                    "availability": "PM",
+                    "noOfAppointment": 2
+                }
+    ],
+    
+    "patient":
+            [
+                {
+                    "pName": "netra",
+                    "pId": 7,
+                    "contactNo": 9856234175,
+                    "age": 21
+                },
+                {
+                    "pName": "jayashri",
+                    "pId": 1,
+                    "contactNo": 9405551259,
+                    "age": 65
+                },
+                {
+                    "pName": "nandkishor",
+                    "pId": 2,
+                    "contactNo": 7588144830,
+                    "age": 51
+                },
+                {
+                    "pName": "pankaj",
+                    "pId": 11,
+                    "contactNo": 9867271765,
+                    "age": 30
+                }
+    ],
+
+    "clinicAppointment":
+            [
+                {
+                    "drName":"akash",
+                    "pName": "pankaj",
+                    "time": "AM"
+                },
+                {
+                    "drName":"manali",
+                    "pName": "nandkishor",
+                    "time": "PM"
+                },
+                {
+                    "drName":"nandini",
+                    "pName": "jayashri",
+                    "time": "PM"
+                }
+            ]
+}
