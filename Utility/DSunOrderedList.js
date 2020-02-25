@@ -158,10 +158,10 @@ class UnOrderedLinkList {
         if (index == 0) {
           this.deleteAtStart()
         }
-          for (let i = 0; i < index; i++) {
+        for (let i = 0; i < index; i++) {
             previous = current;
             current = current.next;
-          }
+        }
         previous.next = current.next;
         this.size--;
 

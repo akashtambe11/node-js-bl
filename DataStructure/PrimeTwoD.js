@@ -8,7 +8,7 @@ console.log("Enter the Range 0 - ? ");
 var getPrimeRange = algoUtil.integerInput();
 
 var primeArr = util.primeRange(getPrimeRange);
-console.log(primeArr);
+// console.log(primeArr);
 
 var finalArray = [[]];
 var i = 0; j = 0; size = 100;
@@ -31,7 +31,7 @@ for(let k = 0; k < primeArr.length; k++){
     }
 }
 //0-100, 100-200, ....., 900-1000 == 10 Parts
-for(let m = 0; m < 10; m++){
+for(let m = 0; m < i+1; m++){
     console.log(finalArray[m]);
     
 }
