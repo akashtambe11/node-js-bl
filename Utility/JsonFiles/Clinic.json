@@ -1,4 +1,23 @@
 {
+    "clinicAppointment":
+            [
+                {
+                    "drName":"akash",
+                    "pName": "pankaj",
+                    "time": "AM"
+                },
+                {
+                    "drName":"manali",
+                    "pName": "nandkishor",
+                    "time": "PM"
+                },
+                {
+                    "drName":"nandini",
+                    "pName": "jayashri",
+                    "time": "PM"
+                }
+            ],
+            
     "doctor":
             [
                 {
@@ -57,24 +76,7 @@
                     "contactNo": 9867271765,
                     "age": 30
                 }
-    ],
+    ]
 
-    "clinicAppointment":
-            [
-                {
-                    "drName":"akash",
-                    "pName": "pankaj",
-                    "time": "AM"
-                },
-                {
-                    "drName":"manali",
-                    "pName": "nandkishor",
-                    "time": "PM"
-                },
-                {
-                    "drName":"nandini",
-                    "pName": "jayashri",
-                    "time": "PM"
-                }
-            ]
+    
 }
