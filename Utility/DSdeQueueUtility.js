@@ -103,36 +103,6 @@ class DeQueue {
         console.log(this.deQueue[this.rear]);
         
     }
-
-    palindromeChecker(str, n){
-        
-        for(let m = 0; m < n; m++){
-            if(m == 0){
-                this.enqueFront(str[m], n)
-            }
-            else{
-                this.enqueRear(str[m], n)
-            }
-        }
-
-        var i = this.front;
-        var j = this.rear;
-        var check = false;
-
-        while(i < j){
-            if(this.deQueue[i] == this.deQueue[j]){
-                check = true;
-                break;
-            }
-            i++;
-            j--;
-        }
-
-        if(check == true)
-                return true;
-            else
-                return false;
-    }
     
 }
 

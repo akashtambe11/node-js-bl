@@ -1,5 +1,4 @@
-var util = require('../Utility/DSqueueUtility')
-var read = require('readline-sync');
+var util = require('../Utility/DSutility')
 var algoUtil = require('../Utility/AlgorithmUtility');
 
 BankCashQueueMain = () => {

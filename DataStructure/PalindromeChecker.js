@@ -1,4 +1,5 @@
-var util = require('../Utility/DSdeQueueUtility');
+
+var util = require('../Utility/DSutility');
 var algoUtil = require('../Utility/AlgorithmUtility');
 
 palindromeChecker = () => {

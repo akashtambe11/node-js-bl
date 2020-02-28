@@ -15,7 +15,7 @@ var i = 0; j = 0; size = 100;
 
 for(let k = 0; k < primeArr.length; k++){
 
-    if(primeArr[k] < size){
+    if(primeArr[k] <= size){
         finalArray[i][j] = primeArr[k];
         j++;
     }

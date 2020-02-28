@@ -2,7 +2,7 @@ var read = require("readline-sync");
 var fs = require("fs");
 
 /**
- * @class node to 
+ * @class node to Create empty Node.
  */
 class node {
   constructor(data, next = null) {
@@ -56,11 +56,11 @@ class UnOrderedLinkList {
           if (this.head == null) {
           this.head = endNode;
           } else {
-          let current = this.head;
-            while (current.next != null) {
+              let current = this.head;
+              while (current.next != null) {
               current = current.next;
             }
-          current.next = endNode;
+              current.next = endNode;
           }
         this.size++;
     }
@@ -252,7 +252,7 @@ class UnOrderedLinkList {
 }
 
 /**
- * @description Create object of
+ * @description Create object of UnOrderedLinkList
  */
 module.exports = new UnOrderedLinkList();
 

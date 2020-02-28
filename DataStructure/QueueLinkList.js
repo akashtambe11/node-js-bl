@@ -1,21 +1,20 @@
-var util = require('../Utility/DSqueueUtility');
+var util = require('../Utility/DSqueueUsingList');
 var algoUtil = require('../Utility/AlgorithmUtility');
 
-queuMain = () => {
+QueueListMain = () => {
 
     while(true){
         console.log("\n1. Enqueue (Add Element in Queue)");
         console.log("2. Dequeue (Remove Element in Queue)");
-        console.log("3. Data on Peek");
-        console.log("4. Print Queue");
-        console.log("5. Exit ");
+        console.log("3. Print Queue");
+        console.log("4. Exit ");
 
         console.log("\nEnter your choice");
         let choice = parseInt(algoUtil.integerInput());
 
         switch(choice){
             case 1:
-                console.log("Enter Element to Enqueue");
+                console.log("Enter Element to push in Queue");
                 let data = parseInt(algoUtil.integerInput());
                 util.enqueue(data);
                 break;
@@ -24,24 +23,20 @@ queuMain = () => {
                 util.dequeue();
                 break;
 
-            case 3:
-                var peekData = util.peek();    
-                console.log("Data on peek = "+peekData)
+            case 3: 
+                util.printStack();
                 break;
 
-            case 4: 
-                util.printQueue();
-                break;
-
-            case 5:
+            case 4:
                 return;
             
             default:
-                console.log("Invalid Input (Range 1 - 5)");
+                console.log("Invalid Input (Range 1 - 4)");
         }
         
     }
     
-} 
 
-queuMain();
+}
+
+QueueListMain();

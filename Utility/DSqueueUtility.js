@@ -11,7 +11,7 @@ class ArrayQueue {
         try{ 
      
             if(value == undefined || value == null || value.length == 0)   throw "input should not be undefined or null"
-            if(isNaN(value))                                             throw "input should be number"
+            if(isNaN(value))                                               throw "input should be number"
              
         }
         catch(e){
@@ -51,102 +51,11 @@ class ArrayQueue {
             for(let i = this.front; i <= this.rear; i++){
                 console.log("Position queue["+i+"] = "+this.queue[i]);
             }
-        }
-    }
-    //Bank cash counter
-    bankCounter(people, bankAmount) {
-
-        try{ 
-     
-            if(people == undefined || people == null || people.length == 0 || bankAmount == undefined || bankAmount == null || bankAmount.length == 0)   
-                                                                throw "input should not be undefined or null"
-            if(isNaN(people) || isNaN(bankAmount))              throw "input should be number"
-           
-             
-        }
-        catch(e){
-            return e;
-        } 
-
-        var totalAmmount = bankAmount, money, personCount = 1;
-        //for loop for make a queue
-        for(let i = 0; i < people; i++){
-            this.enqueue(i);
-        }
-        while(people > 0) {
-            console.log(`TRANSACTION FOR PERSON: ${personCount} \n`);
-            
-            console.log("1. Deposit Money");
-            console.log("2. Withdraw Money");
-
-            console.log("\nEnter your choice");
-            var choice = parseInt(algoUtil.integerInput());
-            
-            switch(choice){
-                case 1:
-                    console.log("\nEnter money to Deposit");
-                    money = parseInt(algoUtil.integerInput());
-                    this.depositMoney(totalAmmount, money)
-                    break;
-                
-                case 2:
-                    console.log("\nEnter money to Withdraw");
-                    money = parseInt(algoUtil.integerInput());
-                    this.withdrawMoney(totalAmmount, money)
-                    break;
-                
-                default:
-                    console.log("\nInvalid Input (Range 1 - 2)");
-                    break;
-                         
-            }
-            people--;
-            personCount++;
-
-  
-        }
-
-    }
-    depositMoney(totalAmmount, money) {
-
-        try{ 
-     
-            if(totalAmmount == undefined || totalAmmount == null || totalAmmount.length == 0 || money == undefined || money == null || money.length == 0)   
-                                                                throw "input should not be undefined or null"
-            if(isNaN(totalAmmount) || isNaN(money))             throw "input should be number"
-               
-        }
-        catch(e){
-            return e;
-        } 
-        totalAmmount = totalAmmount + money;
-        console.log("\nUpdated Ammount of Bank: "+totalAmmount);
-
-    }
-    
-    withdrawMoney(totalAmmount, money) {
-
-        try{ 
-     
-            if(totalAmmount == undefined || totalAmmount == null || totalAmmount.length == 0 || money == undefined || money == null || money.length == 0)   
-                                                                throw "input should not be undefined or null"
-            if(isNaN(totalAmmount) || isNaN(money))             throw "input should be number"
-           
-             
-        }
-        catch(e){
-            return e;
-        } 
-        if(totalAmmount >= money){
-            totalAmmount = totalAmmount - money;
-            console.log("\nUpdated Ammount of Bank: "+totalAmmount);
-        }else{
-            console.log("\nInsufficient Balance in Bank");
+            console.log();
             
         }
     }
-
-
+   
 }
 
 
