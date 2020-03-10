@@ -1,3 +1,14 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node DeQueue.js
+*
+*Purpose      :  To perform de-queue opertaion of Data structure.
+*@description  
+*
+*@file        :  DeQueue.js
+*@overview    :  DeQueue module is to perform various de-queue operations.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSdeQueueUtility');
 var algoUtil = require('../Utility/AlgorithmUtility');
 

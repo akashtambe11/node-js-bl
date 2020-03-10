@@ -1,3 +1,15 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node ClinicManagement.js
+*
+*Purpose      :  To manage clinic data using json file.
+*@description  
+*
+*@file        :  ClinicManagement.js
+*@overview    :  ClinicManagement module is to manage various clinic data and store it in
+                 jason file.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/OopsClinicUtility')
 var algoUtil = require('../Utility/AlgorithmUtility')
 

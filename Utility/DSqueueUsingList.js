@@ -7,7 +7,7 @@ class node {
       this.data = data;
       this.next = next;
     }
-  }
+  }  
   
   class QueueLinkList {
     constructor() {
@@ -16,7 +16,16 @@ class node {
       this.size = 0;
     }
 
-    enqueue(data){
+    enqueue(data){ 
+      try{ 
+     
+        if(data == undefined || data == null || data.length == 0)   
+                                                     throw "input should not be undefined or null"
+    }
+    catch(e){
+        return e;
+    } 
+    
         if(this.front == null && this.rear == null){
             this.front = this.rear = new node(data, null);
             this.size++;

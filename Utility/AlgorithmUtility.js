@@ -42,7 +42,7 @@ arrayIntElementInput(size){
             for(let i = 0; i < size; i++){
                 array[i] = this.integerInput();   
             }
-            return array;
+            return array; 
 },
 
 //Array String Input
@@ -65,13 +65,36 @@ arrayStrElementInput(size){
     }
     return array;
 },
+
+//Leap Year Checker
+isLeapYear(year){
+
+    try{ 
+ 
+        if(year == undefined || year == null || year.length == 0)   
+                                     throw "input should not be undefined or null"
+        if(isNaN(year))              throw "input should be number"
+         
+    }
+    catch(e){
+        return e;
+    }
+
+    // To Check Enter year is leap year or not?
+    if (year % 4 == 0 && year % 100 != 0 || year % 400 == 00) {
+        return true;
+    } else {
+        return false;
+    }
+},
+
 //Prime Number Checker
 isPrime(num){
     try{
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(num == undefined || num == null || num.length == 0)              throw "input should not be undefined or null"
+        if(num == undefined || num == null || num.length == 0)                throw "input should not be undefined or null"
         if(isNaN(num))                                                        throw "input should be number"     
         
     }
@@ -334,21 +357,21 @@ bubSortIntegerFile(){
 },
 
 /*-----------------------Day of Week --------------------*/
-isRightDate(dateInput){
+isRightDate(dateInput, totalDays){
     try{
         /**
          * @description To handle exception and if found then trow specific custom error.
          */
-        if(dateInput == undefined || dateInput == null || dateInput.length == 0)          throw "input should not be undefined or null"
+        if(dateInput == undefined || dateInput == null || dateInput.length == 0)  throw "input should not be undefined or null"
         if(isNaN(dateInput))                                                      throw "input should be number"     
         
     }
     catch(e){
         return e;
-    }
+    } 
     
-    while(dateInput < 1 || dateInput > 31){
-        console.log("Enter Proper Date (Range: 1 - 31)");
+    while(dateInput < 1 || dateInput > totalDays){
+        console.log(`Enter Proper Date (Range: 1 - ${totalDays})`);
         var dateInput = this.integerInput();
     }
     return dateInput;
@@ -406,12 +429,15 @@ dayOfWeek(d, m, y){
         if(d == undefined || d == null || d.length == 0 || m == undefined || m == null || m.length == 0 || y == undefined || y == null || y.length == 0)          
                                     throw "input should not be undefined or null"
         if(isNaN(d) || isNaN(m) || isNaN(y))              
-                                    throw "input should be number"     
+                                    throw "input should be number" 
+         
         
     }
     catch(e){
         return e;
     }
+
+    
     var y0 = y - Math.floor((14 - m) / 12);
     var x = y0 + Math.floor((y0 / 4)) - Math.floor((y0 / 100)) + Math.floor((y0 / 400));
     var m0 = m + 12 * Math.floor((14 - m) / 12) - 2;

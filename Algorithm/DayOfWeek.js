@@ -13,21 +13,31 @@ var read = require('readline-sync');
 var util = require('../Utility/AlgorithmUtility');
 
 dayMain = () => {
-    console.log("Enter Date");
-    var dateInput = util.integerInput();
-    var d = parseInt(util.isRightDate(dateInput));
-
-    console.log("\nEnter Month");
-    var monthInput = util.integerInput();
-    var m = parseInt(util.isRightMonth(monthInput));
-
+    
     console.log("\nEnter Year");
     var yearInput = util.integerInput();
     var y = parseInt(util.isRighYear(yearInput));
 
+    console.log("\nEnter Month");
+    var monthInput = util.integerInput();
+    var m = parseInt(util.isRightMonth(monthInput));
+    
+    console.log("\nEnter Date");
+
+    var totalDays = [31,28,31,30,31,30,31,30,31,30,31,30];
+    /**
+     * @description To handle Leap Year(If leap year found totalDays become 29)
+     */
+        if(m == 2 && util.isLeapYear(y)) {
+            totalDays[m-1] = 29;
+        }
+
+    var dateInput = util.integerInput();
+    var d = parseInt(util.isRightDate(dateInput, totalDays[m-1]));
+
     var day = util.dayOfWeek(d, m, y);
 
     var array = ['Sunday', 'Monday', 'Tuesday', 'WednesDay', 'Thursday', 'Friday', 'Saturday'];
-    console.log(array[day]);
+    console.log(`\nDay on ${d}-${m}-${y}: ${array[day]}`);
 }
 dayMain();

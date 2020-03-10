@@ -1,5 +1,15 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node AnagramDetection.js
+*
+*Purpose      :  To determine the input string characters are balanced or not.
+*@description  
+*
+*@file        :  BalencedParathesis.js
+*@overview    :  BalencedParathesis module is to check weather input string get balanced.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSutility')
-// var util = require('../Utility/DSStackUtility')
 var read = require('readline-sync');
 
 balancedParathesisMain = () => {

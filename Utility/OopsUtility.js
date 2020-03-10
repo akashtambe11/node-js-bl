@@ -5,7 +5,15 @@ var algoUtil = require('../Utility/AlgorithmUtility')
 module.exports = {
 
     regExApply(para, name, fullName, mobileNo){
-       
+        try{
+             
+            if(para == undefined || para == null || para.length == 0 || name == undefined || name == null || name.length == 0 || fullName == undefined || fullName == null || fullName.length == 0 || mobileNo == undefined || mobileNo == null || mobileNo.length == 0)                 
+                                    throw "input should not be undefined or null"
+         }
+         catch(e){
+             return e;
+         }
+         
         var nameRe = /^[a-zA-Z]+$/;
         var fNameRe = /(\w.+\s).+/;
         var MobRe = /^([+]\d{2}[ ])?\d{10}$/;

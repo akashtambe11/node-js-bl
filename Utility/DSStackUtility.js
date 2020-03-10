@@ -30,7 +30,7 @@ class ArrayStack {
       
         
     }
-    peek(){
+    peek(){ 
         return this.stack[this.top];
         
     }

@@ -49,7 +49,7 @@ class OrderedLinkList {
    * @description Insert data at the last
    */
   insertAtLast(data) {
-    try{ 
+    try{  
     
         if(data == undefined || data == null || data.length == 0)   throw "input should not be undefined or null"
         if(isNaN(data))                                             throw "input should be number"

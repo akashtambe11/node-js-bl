@@ -1,11 +1,10 @@
 const assert = require('chai').assert;
-const util = require('../Utility/DSqueueUtility');
+const util = require('../Utility/DSqueueUsingList');
 
-
-describe('DSqueueUtility.js = enqueue()', function(){
+describe('DSqueueUsingList.js = function: enqueue()', function(){
     it('should be pass', function(){
         util.enqueue(10);
-    });
+    }); 
     it('should not be undefined', () => {
         var a = util.enqueue(undefined);
         assert.equal("input should not be undefined or null", a);
@@ -14,30 +13,19 @@ describe('DSqueueUtility.js = enqueue()', function(){
         var b = util.enqueue(null);
         assert.equal("input should not be undefined or null", b);
     });
-    it('should be number', () => {
-        var c = util.enqueue('a');
-        assert.equal("input should be number", c)
-    });
+   
 });
 
 
-describe('DSqueueUtility.js = dequeue()', function(){
+describe('DSqueueUsingList.js = function: dequeue()', function(){
     it('should be pass', function(){
         util.dequeue();
     });
 });
 
 
-describe('DSqueueUtility.js = peek()', function(){
+describe('DSqueueUsingList.js = function: printStack()', function(){
     it('should be pass', function(){
-        util.peek();
+        util.printStack();
     });
 });
-
-
-describe('DSqueueUtility.js = printQueue()', function(){
-    it('should be pass', function(){
-        util.printQueue();
-    });
-});
-

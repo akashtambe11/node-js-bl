@@ -1,7 +1,16 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node OrderedList.js
+*
+*Purpose      :  To perform Ordered LinkList opertaion of Data structure.
+*@description  
+*
+*@file        :  OrderedList.js
+*@overview    :  OrderedList module is to perform various Ordered LinkList operations.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSorderedList');
 var algoUtil = require('../Utility/AlgorithmUtility');
-
-
 
 orderedList = () => {
     var textData = util.fileReadOL();
@@ -14,13 +23,6 @@ orderedList = () => {
         return parseInt(item, 10);
     }); 
     // console.log(arrData);
-
-
-    // /**
-    //  * @description called bubbleSortInteger function to Sort data 
-    //  */
-    // var arr = algoUtil.bubleSortInteger(arrData);
-    
     
     /**
      * @description Adding all data in unordered LinkList

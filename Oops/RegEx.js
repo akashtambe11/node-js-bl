@@ -1,3 +1,15 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node RegEx.js
+*
+*Purpose      :  To replace specific data from paragraph with valid information.
+*@description  
+*
+*@file        :  RegEx.js
+*@overview    :  RegEx module is to replace specific data of paragraph with user input 
+                 valid data.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/OopsUtility');
 var read = require('readline-sync')
 var algoUtil = require('../Utility/AlgorithmUtility')

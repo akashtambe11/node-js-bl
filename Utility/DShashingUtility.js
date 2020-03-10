@@ -1,8 +1,4 @@
-var read = require("readline-sync");
-var OLLutil = require('../Utility/DSorderedList')
-var mainFile = require('../DataStructure/Hashing')
 var fs = require("fs");
-
 
 class Hash {
     fileReadHash() {
@@ -15,11 +11,27 @@ class Hash {
      * @description hash function to calculate modulas of value and size
      */
     hash(num, tableSize){
+        try{ 
+     
+            if(num == undefined || num == null || num.length == 0 || tableSize == undefined || tableSize == null || tableSize.length == 0)   
+                                                    throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
             
         return num % tableSize;
     }
 
     add(data, linkList, size){
+        try{ 
+     
+            if(data == undefined || data == null || data.length == 0 || linkList == undefined || linkList == null || linkList.length == 0 || size == undefined || size == null || size.length == 0)   
+                                                    throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
       
         
         let index = this.hash(data, size)
@@ -33,7 +45,6 @@ class Hash {
 
         }
       
-        
         if(insert === false){
             
             linkList[index].push(data);
@@ -42,6 +53,15 @@ class Hash {
     }
 
     remove(data, linkList, size){
+        try{ 
+     
+            if(data == undefined || data == null || data.length == 0 || linkList == undefined || linkList == null || linkList.length == 0 || size == undefined || size == null || size.length == 0)   
+                                                    throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
+
         let index = this.hash(data, size)
         let deleted = false;
        
@@ -65,6 +85,15 @@ class Hash {
     }
 
     print(linkList, size){
+        try{ 
+     
+            if(linkList == undefined || linkList == null || linkList.length == 0 || size == undefined || size == null || size.length == 0)   
+                                                    throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
+
         var str ="";
         for(let i = 0; i < size; i++){
             str = str + linkList[i] + ", ";

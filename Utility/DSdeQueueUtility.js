@@ -10,6 +10,15 @@ class DeQueue {
     }
 
     enqueFront(value, n){
+        try{ 
+     
+            if(value == undefined || value == null || value.length == 0 || n == undefined || n == null || n.length == 0)   
+                                                         throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
+        
         if (this.front == 0 && this.rear == n-1 || this.front == this.rear + 1) {
             console.log("Queue is Full \n");
         }
@@ -29,6 +38,15 @@ class DeQueue {
 
 
     enqueRear(value, n){
+        try{ 
+     
+            if(value == undefined || value == null || value.length == 0 || n == undefined || n == null || n.length == 0)   
+                                                         throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
+
         if (this.front == 0 && this.rear == n-1 || this.front == this.rear + 1) {
             console.log("Queue is Full \n");
         }
@@ -47,7 +65,7 @@ class DeQueue {
     }
 
 
-    getFront(n) {
+    getFront() {
         if (this.front == -1 && this.rear == -1) {
             console.log("Queue is Empty \n");
         }
@@ -56,7 +74,7 @@ class DeQueue {
     }
     
 
-    getRear(n) {
+    getRear() {
         if (this.front == -1 && this.rear == -1) {
             console.log("Queue is Empty \n");
         }
@@ -65,6 +83,14 @@ class DeQueue {
     }
 
     deQueueFront(n) {
+        try{ 
+     
+            if(n == undefined || n == null || n.length == 0)   
+                                                    throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
         if (this.front == -1 && this.rear == -1) {
             console.log("Queue is Empty \n");
         }
@@ -80,6 +106,15 @@ class DeQueue {
 
 
     deQueueRear(n) {
+        try{ 
+     
+            if(n == undefined || n == null || n.length == 0)   
+                                                    throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
+
         if (this.front == -1 && this.rear == -1) {
             console.log("Queue is Empty \n");
         }
@@ -95,6 +130,15 @@ class DeQueue {
 
 
     printQueue(n) {
+        try{ 
+     
+            if(n == undefined || n == null || n.length == 0)   
+                                                    throw "input should not be undefined or null"
+        }
+        catch(e){
+            return e;
+        } 
+        
         var i = this.front;
         while (i != this.rear) {
             console.log(this.deQueue[i]);

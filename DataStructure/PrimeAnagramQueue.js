@@ -1,3 +1,16 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node PrimeAnagramQueue.js
+*
+*Purpose      :  To find anagram number from the prime number range of 0 - 1000 using queue 
+                 Data Structure.
+*@description  
+*
+*@file        :  PrimeAnagramQueue.js
+*@overview    :  PrimeAnagramQueue module is to perform anagram operation on prime numbers
+                 using queue data structure.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSqueueUsingList');
 var DsUtil = require('../Utility/DSutility');
 

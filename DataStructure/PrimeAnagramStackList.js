@@ -1,3 +1,16 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node PrimeAnagramStackList.js
+*
+*Purpose      :  To find anagram number from the prime number range of 0 - 1000 using stack 
+                 Data Structure.
+*@description  
+*
+*@file        :  PrimeAnagramStackList.js
+*@overview    :  PrimeAnagramStackList module is to perform anagram operation on prime numbers
+                 using stack data structure.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSstackUsingList');
 var DsUtil = require('../Utility/DSutility');
 

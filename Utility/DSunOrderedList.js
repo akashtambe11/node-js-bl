@@ -19,7 +19,7 @@ class UnOrderedLinkList {
   /**
    * @description To read UnorderedList File
    */
-  fileRead() {
+  fileRead() { 
     var textData = fs.readFileSync(__dirname + "/TextFiles/UnOrderedList.txt", "utf-8");
     return textData.trim();
    

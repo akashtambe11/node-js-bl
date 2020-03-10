@@ -1,24 +1,24 @@
 /********************************************************************************************
-*Execution    :  default node     cmd> node StockAccount.js
+*Execution    :  default node     cmd> node AddressBook.js
 *
-*Purpose      :  To store stock data of modified personal stock and main stock in json file.
+*Purpose      :  To manage address book data according to user input.
 *@description  
 *
-*@file        :  StockAccount.js
-*@overview    :  StockAccount module is to modified stock data of both personal stock and 
-                 main stock and store in json file.
+*@file        :  AddressBook.js
+*@overview    :  AddressBook module is to add, delete or modify the person data and store 
+                 in external json file.
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var util = require('../Utility/OopsStockAccountUtility');
+var util = require('../Utility/AddressBookUtility');
 var algoUtil = require('../Utility/AlgorithmUtility')
 
 
-StockAccountMain = () => {
+AddBookMain = () => {
 
-    while(true){
+    while(true) {
 
-        console.log("\n1. Display all Shares. \n2. Details of specific Shares. \n---------------------- \n3. Display My Shares \n4. Details of My Shares \n5. Purchase Shares.  \n6. Sell Shares \n7. LOG OUT");
+        console.log("\n***** MAIN MENU ***** \n1. Add Person. \n2. Delete Person. \n3. Edit Person Data \n4. Sort by Last Name. \n5. Sort by Zip.  \n6. Display. \n7. LOG OUT");
 
         console.log("\nEnter your Choice");
         var choice = parseInt(algoUtil.integerInput());
@@ -26,27 +26,27 @@ StockAccountMain = () => {
         switch(choice){
 
             case 1:
-                util.availableStock();
+                util.addPerson();
                 break;
             
             case 2:
-                util.stockDetails();
+                util.deletePerson();
                 break;
             
             case 3:
-                util.availableMyStock();
+                util.editPersonData();
                 break;
 
             case 4:
-                util.stockMyDetails();
+                util.sortByLastname();
                 break;
             
             case 5:
-                util.buyStock();
+                util.sortByZip();
                 break;
 
             case 6:
-                util.sellStock();
+                util.display();
                 break;
 
             case 7:
@@ -61,6 +61,4 @@ StockAccountMain = () => {
 
 }
 
-StockAccountMain();
-
-
+AddBookMain();

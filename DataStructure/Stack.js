@@ -1,3 +1,14 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node Stack.js
+*
+*Purpose      :  To perform Stack opertaion of Data structure.
+*@description  
+*
+*@file        :  Stack.js
+*@overview    :  Stack module is to perform various Stack operations.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSStackUtility');
 var algoUtil = require('../Utility/AlgorithmUtility');
 

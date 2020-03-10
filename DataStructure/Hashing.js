@@ -1,3 +1,14 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node Hashing.js
+*
+*Purpose      :  To perform Hashing opertaion of Data structure.
+*@description  
+*
+*@file        :  Hashing.js
+*@overview    :  Hashing module is to perform various Hashing operations.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DShashingUtility');
 var OLLutil = require('../Utility/DSorderedList')
 var algoUtil = require('../Utility/AlgorithmUtility');

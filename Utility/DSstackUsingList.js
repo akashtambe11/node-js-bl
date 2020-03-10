@@ -19,7 +19,7 @@ class StackLinkList {
   push(data) {
     try{ 
       if(data == undefined || data == null || data.length == 0)  throw "input should not be undefined or null"
-    //   if(!(/^[a-zA-Z]+$/.test(data)))                            throw "input should be string"
+      //if(!(/^[a-zA-Z]+$/.test(data)))                            throw "input should be string"
 
         this.top = new node(data, this.top);
         this.size++;

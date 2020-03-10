@@ -22,7 +22,7 @@ class ArrayQueue {
             this.front = this.rear = 0;
             this.queue[this.rear] = value;
         }else{
-            this.rear++;
+            this.rear++; 
             this.queue[this.rear] = value;
         }
     }

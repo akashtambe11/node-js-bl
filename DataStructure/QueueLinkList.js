@@ -1,5 +1,16 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node QueueLinkList.js
+*
+*Purpose      :  To perform Queue opertaion of Data structure using Linklist.
+*@description  
+*
+*@file        :  QueueLinkList.js
+*@overview    :  QueueLinkList module is to perform various Queue operations using Linklist.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSqueueUsingList');
-var algoUtil = require('../Utility/AlgorithmUtility');
+var algoUtil = require('../Utility/AlgorithmUtility'); 
 
 QueueListMain = () => {
 

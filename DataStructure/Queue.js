@@ -1,3 +1,14 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node Queue.js
+*
+*Purpose      :  To perform Queue opertaion of Data structure.
+*@description  
+*
+*@file        :  Queue.js
+*@overview    :  Queue module is to perform various Queue operations.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSqueueUtility');
 var algoUtil = require('../Utility/AlgorithmUtility');
 

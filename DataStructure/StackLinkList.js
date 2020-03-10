@@ -1,3 +1,14 @@
+/********************************************************************************************
+*Execution    :  default node     cmd> node StackLinkList.js
+*
+*Purpose      :  To perform Stack opertaion of Data structure using Linklist.
+*@description  
+*
+*@file        :  StackLinkList.js
+*@overview    :  StackLinkList module is to perform various Stack operations using Linklist.
+*@author      :  Akash Tambe <akashtambe11@gmail.com>
+*@version     :  1.0
+*********************************************************************************************/
 var util = require('../Utility/DSstackUsingList');
 var algoUtil = require('../Utility/AlgorithmUtility');
 
