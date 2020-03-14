@@ -10,20 +10,29 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/FunctionalUtility');
 var algoUtil = require('../Utility/AlgorithmUtility')
 
-couponMain = () => {
 /**
-*@description size is used to take input from user will used to for element input
-*@var {Number} size.
-*/
-console.log("Enter the quantity of coupons");
-var size = algoUtil.integerInput();
+ * @description The main function is written to check Coupon Numbers.
+ */
+couponMain = () => {
+    /**
+    *@description size is used to take input from user will used to for element input
+    *@var {Number} size.
+    */
+    console.log("\nEnter the quantity of coupons");
+    var size = algoUtil.integerInput();
 
-var count = util.coupon(size);
-console.log("Total Ittration to get all coupons are = "+count);
+     /**
+    * @description Calling coupon method from FunctionalUtility File.
+    */
+    var count = util.coupon(size);
+    console.log("\nTotal Ittration to get all coupons are = "+count);
 }
 
 couponMain();

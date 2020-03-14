@@ -10,17 +10,25 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/FunctionalUtility');
 var algoUtil = require('../Utility/AlgorithmUtility')
 
+/**
+ * @description The main function is written to find prime factor of a number.
+ */
 primeFactorMain = () => {
 
-    console.log("Enter number to find prime factors");
+    console.log("\nEnter number to find prime factors");
     var num = algoUtil.integerInput();
 
+    /**
+    * @description Calling pFactors method from FunctionalUtility File.
+    */
     util.pFactors(num);
-    
-    
 }
+
 primeFactorMain();

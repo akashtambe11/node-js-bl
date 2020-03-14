@@ -11,16 +11,25 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/FunctionalUtility');
 var algoUtil = require('../Utility/AlgorithmUtility')
 
+/**
+ * @description The main function is written to get harmonic value of series.
+ */
 harmonicMain = () => {
-console.log("Enter nth number of Harmonic Series\n");
-var nthNumber = algoUtil.integerInput();
+    console.log("\nEnter nth number of Harmonic Series");
+    var nthNumber = algoUtil.integerInput();
 
-var sum = util.harmonic(nthNumber);
-console.log("\nHarmonic Value for "+nthNumber+" = \n"+sum);
+    /**
+    * @description Calling harmonic method from FunctionalUtility File.
+    */
+    var sum = util.harmonic(nthNumber);
+    console.log("\nNth Harmonic Value of '"+nthNumber+"' =\n"+sum.toFixed(2));
 }
 
 harmonicMain();

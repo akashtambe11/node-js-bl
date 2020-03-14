@@ -12,10 +12,16 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/FunctionalUtility');
 var algoUtil = require('../Utility/AlgorithmUtility')
 
+/**
+ * @description The main function is written to find add 2D array.
+ */
 twoDimArrayMain = () => {
 console.log("\nEnter the number of Row");
 var row = algoUtil.integerInput();
@@ -23,6 +29,9 @@ var row = algoUtil.integerInput();
 console.log("\nEnter the number of Column");
 var column = algoUtil.integerInput();
 
+/**
+ * @description Calling twoDimArrray method from FunctionalUtility File.
+ */
 util.twoDimArrray(row, column);
 }
 

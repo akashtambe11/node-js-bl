@@ -11,10 +11,16 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/FunctionalUtility');
 var algoUtil = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to find three number whoes sum is zero.
+ */
 sumOfThreeMain = () => {
     
     console.log("Enter the Size of an Array");
@@ -24,14 +30,22 @@ sumOfThreeMain = () => {
         var size = algoUtil.integerInput();
     }
 
+     /**
+    * @description Calling arrayIntElementInput method from AlgorithmUtility File to take 
+    *              integers as input.             
+    */
     var arr = algoUtil.arrayIntElementInput(size);
+
+    /**
+    * @description Calling sumOfThreeIntZero method from FunctionalUtility File.
+    */
     var numbers = util.sumOfThreeIntZero(arr, size);
     if(numbers == false){
         console.log("Sum of three integer is not Zero");
         
     }else{
         console.log("Three Elements are = "+numbers[0]+", "+numbers[1]+", "+numbers[2]);
-    }
-       
+    }   
 }
+
 sumOfThreeMain();
