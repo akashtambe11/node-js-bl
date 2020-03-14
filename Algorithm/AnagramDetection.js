@@ -9,16 +9,28 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to check Anagram String.
+ */
 anagramMain = () => {
-    console.log("Enter String 1 =")
+
+    console.log("\nAnagram Example: (listen, silent) \n\nEnter String 1 =");
     var str1 = util.stringInput();
-    console.log("\nEnter String 2 =")
+
+    console.log("\nEnter String 2 =");
     var str2 = util.stringInput();
     
+    /**
+    * @description Calling isAnagram method from AlgorithmUtility File.
+    */
     var ansCheck = util.isAnagram(str1, str2);
+    
     if(ansCheck == true){
         console.log("\nEnterd two Strings are Anagram");
     }else{

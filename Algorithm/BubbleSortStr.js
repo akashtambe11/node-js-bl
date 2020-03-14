@@ -9,18 +9,32 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to bubble sort string from and array.
+ */
 bubStrMain = () => {
-    console.log("Enter the size of an Array")
+    console.log("\nEnter the size of an Array");
     var size = util.integerInput();
 
+    /**
+    * @description Calling arrayStrElementInput method from AlgorithmUtility File to take 
+    *              string as input.             
+    */
     var arr = util.arrayStrElementInput(size);
 
+    /**
+    * @description Calling bubleSortString method from AlgorithmUtility File.
+    */
     var BubSortedArr = util.bubleSortString(arr);
-    console.log("Sorted Array = "+BubSortedArr);
+    console.log("\nSorted Array = "+BubSortedArr);
 }
+
 bubStrMain();
 
 

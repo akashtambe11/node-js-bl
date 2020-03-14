@@ -10,16 +10,30 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to find out prime number range.
+ */
 primeRangeMain = () => {
 
-console.log("Enter the Range 0 - ? ");
-var range = util.integerInput();
+    console.log("\nEnter the Range 0 - ? ");
+    var range = util.integerInput();
 
-var paliArray = util.primeRange(range);
-console.log(paliArray);
+    /**
+    * @description Calling primeRange method from AlgorithmUtility File.
+    */
+    var paliArray = util.primeRange(range);
+    
+    for(let i in paliArray) {
+        console.log(paliArray[i]);
+    }
+    
 }
+
 primeRangeMain();
 

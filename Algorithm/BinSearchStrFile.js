@@ -10,13 +10,23 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to search binary string from and array of text file.
+ */
 binFileMain = () => {
-    console.log("Enter the name of Fruits\n");
+    console.log("\nEnter the name of Fruits");
     var name = util.stringInput();
 
+    /**
+    * @description Calling binSearchStringFile method from AlgorithmUtility File.
+    */
     util.binSearchStringFile(name);
 }
+
 binFileMain();

@@ -14,9 +14,5 @@ describe('Algorithm Programs : () : isPalindrome()', function(){
         var c = util.isPalindrome(null);
         assert.equal("input should not be undefined or null", c);
     });
-    it('should be number', () => {
-        var d = util.isPalindrome('abc');
-        assert.equal("input should be number", d)
-    })
     
 });

@@ -9,13 +9,29 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to find changes to be given to amount of money.
+ */
 vendingMain = () => {
-var noteArr = [1000, 500, 100, 50, 20, 10, 5, 2, 1];
-var money = read.question("Enter your amount of Money\n");
 
-util.vendingMachineCal(noteArr, money);
+    /**
+     * @description noteArr Array to store money is sorted format
+     */
+    var noteArr = [1000, 500, 100, 50, 20, 10, 5, 2, 1];
+
+    console.log("\nEnter Amount of Money:");
+    var money = parseInt(util.integerInput());
+
+    /**
+    * @description Calling vendingMachineCal method from AlgorithmUtility File.
+    */
+    util.vendingMachineCal(noteArr, money);
 }
+
 vendingMain();

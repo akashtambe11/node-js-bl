@@ -10,23 +10,37 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to search binary string from and array.
+ */
 binaryStrMain = () => {
-    console.log("Enter the Size of an Array\n");
+    console.log("\nEnter the Size of an Array");
     var size = util.integerInput();
 
+    /**
+    * @description Calling arrayStrElementInput method from AlgorithmUtility File to take 
+    *              string as input.             
+    */
     var arr = util.arrayStrElementInput(size);
    
-    console.log("Enter the Search Key in Array\n");
+    console.log("\nEnter the Search Key in Array");
     var key = util.stringInput();
 
+    /**
+    * @description Calling binarySearchString method from AlgorithmUtility File.
+    */
     var keyDetection = util.binarySearchString(arr, key);
     
     if(keyDetection)
-        console.log("Your Key '"+key+"' is FOUND in an Array.");
+        console.log("\nYour Key '"+key+"' is FOUND in an Array.");
         else
-        console.log("Your Key '"+key+"' does NOT found in Search.")
+        console.log("\nYour Key '"+key+"' does NOT found in Search.");
 }
+
 binaryStrMain();

@@ -9,16 +9,30 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
-var read = require('readline-sync');
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to perform string merge sort on an array.
+ */
 mergeStrMain = () => {
-    console.log("Enter the size of an Array")
+    console.log("\nEnter the size of an Array")
     var size = util.integerInput();
 
+    /**
+    * @description Calling arrayStrElementInput method from AlgorithmUtility File to take
+    *              input as string.
+    */
     var arr = util.arrayStrElementInput(size);
 
+     /**
+    * @description Calling mergeSortString method from AlgorithmUtility File.
+    */
     var mergeSortedArr = util.mergeSortString(arr);
-    console.log("Sorted Array = "+mergeSortedArr);
+    console.log("\nSorted Array = "+mergeSortedArr);
 }
+
 mergeStrMain();
