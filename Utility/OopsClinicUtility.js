@@ -1,7 +1,12 @@
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var fs = require('fs');
 var algoUtil = require('../Utility/AlgorithmUtility')
 
-
+/**
+ * @class Clinic to read Json File.
+ */
 class Clinic{
     constructor(){
         var jsonData = fs.readFileSync(__dirname + "/JsonFiles/Clinic.json");
@@ -9,19 +14,26 @@ class Clinic{
         
     }
 
+    /**
+    * @method displayData() - To display data.
+    */
     displayData(){
         console.log(this.data);
         
     }
 
-
+    /**
+    * @method takeAppointment() - To take new appointment.
+    */
     takeAppointment(){
         console.log("\nEnter Doctor's Name");;
         var drName = algoUtil.stringInput().toLowerCase();
 
         console.log("\nEnter Appointment Time (AM, PM, Both)");
         var appntTime = algoUtil.stringInput().toUpperCase();
-    
+        /**
+         * @description Appointment time validation.
+         */
         while(appntTime != "AM" && appntTime != "PM" && appntTime != "BOTH"){
             
             console.log("\nEnter valid Time (i.e Am, PM or Both) \n(Enter Again)");
@@ -33,6 +45,9 @@ class Clinic{
         let patientRegistration = false;
 
         for(let i in this.data.patient){
+            /**
+             * @description To check specific patient Name is available in list or not.
+             */
             if (this.data.patient[i].pName == pName) {
                patientRegistration = true;
             }
@@ -41,6 +56,9 @@ class Clinic{
         if(patientRegistration == true){
             let i = -1;
             for (let key in this.data.doctor){
+                /**
+                 * @description To check specific doctor Name is available in list or not.
+                 */
                 if(this.data.doctor[key].drName == drName)
                 i = key;
             }
@@ -83,7 +101,9 @@ class Clinic{
 
     }
 
-
+    /**
+    * @method addPatient() -To add new patient's data.
+    */
     addPatient(){
         console.log("\nEnter Patient's Name");;
         var pName = algoUtil.stringInput();
@@ -93,6 +113,10 @@ class Clinic{
 
         console.log("\nEnter Patient's Contact No.");
         var contactNo = algoUtil.integerInput();
+
+        /**
+         * @description Contact number validation.
+         */
         while(contactNo.length != 10){
             console.log('\nMobile number should have 10 Digit');
             var contactNo = algoUtil.integerInput();
@@ -101,7 +125,9 @@ class Clinic{
         console.log("\nEnter Age of Patient");
         var age = parseInt(algoUtil.integerInput());
         
-         //Push the above data in patient of clinic.json
+         /**
+          * @description Push the above data in patient of clinic.json
+          */
          this.data.doctor.push({
             "pName": pName,
             "pId": pId,
@@ -112,8 +138,9 @@ class Clinic{
         fs.writeFileSync(__dirname + "/JsonFiles/Clinic.json", JSON.stringify(this.data));
     }
 
-
-    
+    /**
+    * @method addDoctor() - To add new doctor's data.
+    */
     addDoctor(){
         console.log("\nEnter Doctor's Name");;
         var drName = algoUtil.stringInput();
@@ -132,8 +159,10 @@ class Clinic{
             console.log("\nEnter valid Time (i.e Am, PM or Both) \n(Enter Again)");
             var availability = algoUtil.stringInput().toUpperCase();
         }
-        
-        //Push the above data in doctor of clinic.json
+
+        /**
+         * @description To add the above data in doctor of clinic.json
+         */
         this.data.doctor.push({
             "drName": drName,
             "drId": drId,
@@ -145,7 +174,9 @@ class Clinic{
         fs.writeFileSync(__dirname + "/JsonFiles/Clinic.json", JSON.stringify(this.data));
     }
 
-
+    /**
+    * @method searchPatient() - To search for patient.
+    */
     searchPatient(){
         while(true){
             console.log("\n--------PATIENT SEARCH--------- \n1. Search by Name \n2. Search by ID \n3. Search by Conatct No. \n4. Back to Main Menu");
@@ -159,6 +190,9 @@ class Clinic{
                             var pNameSearch = algoUtil.stringInput().toLowerCase();
                             var search = false;
                             for(let i in this.data.patient){
+                                /**
+                                 * @description To check specific patient Name is available in list or not.
+                                 */
                                 if(this.data.patient[i].pName == pNameSearch){
                                     
                                     this.displayPatientData(i);
@@ -177,6 +211,9 @@ class Clinic{
                             var pIdSearch = algoUtil.integerInput();
                             var search = false;
                             for(let i in this.data.patient){
+                                /**
+                                 * @description To check specific patient Id is available in list or not.
+                                 */
                                 if(this.data.patient[i].pId == pIdSearch){
                                     
                                     this.displayPatientData(i);
@@ -193,6 +230,9 @@ class Clinic{
                     case 3:
                             console.log("Enter Contact Number of Patient");
                             var contactNoSearch = algoUtil.integerInput();
+                            /**
+                             * @description Contact number validation.
+                             */
                             while(contactNoSearch.length != 10){
                                 console.log('\nMobile number should have 10 Digit');
                                 var contactNoSearch = algoUtil.integerInput();
@@ -200,6 +240,9 @@ class Clinic{
 
                             var search = false;
                             for(let i in this.data.patient){
+                                /**
+                                 * @description To check specific contact Number is available in list or not.
+                                 */
                                 if(this.data.patient[i].contactNo == contactNoSearch){
                                     
                                     this.displayPatientData(i);
@@ -222,7 +265,9 @@ class Clinic{
         }
     }
 
-
+    /**
+    * @method searchDoctor() - To search for doctor.
+    */
     searchDoctor(){
         while(true){
             console.log("\n--------DOCTOR SEARCH--------- \n1. Search by Name \n2. Search by ID \n3. Search by Speciality \n4. Search by Availability of Tme \n5. Back to Main Menu");
@@ -236,6 +281,10 @@ class Clinic{
                             var drNameSearch = algoUtil.stringInput().toLowerCase();
                             var search = false;
                             for(let i in this.data.doctor){
+
+                                /**
+                                 * @description To check specific doctor is available in list or not.
+                                 */
                                 if(this.data.doctor[i].drName == drNameSearch){
                                     
                                     this.displayDoctorData(i);
@@ -254,6 +303,9 @@ class Clinic{
                             var drIdSearch = algoUtil.integerInput();
                             var search = false;
                             for(let i in this.data.doctor){
+                                /**
+                                 * @description To check specific doctor ID is available in list or not.
+                                 */
                                 if(this.data.doctor[i].drId == drIdSearch){
                                     
                                     this.displayDoctorData(i);
@@ -272,6 +324,9 @@ class Clinic{
                             var drSpecialitySearch = algoUtil.stringInput().toLowerCase();
                             var search = false;
                             for(let i in this.data.doctor){
+                                 /**
+                                 * @description To check specific doctor with Speciality is available in list or not.
+                                 */  
                                 if(this.data.doctor[i].speciality == drSpecialitySearch){
                                     
                                     this.displayDoctorData(i);
@@ -318,12 +373,17 @@ class Clinic{
         }
     }
 
-    
+    /**
+    * @method searchSpecialist() - To search for availability of speciality in hospital.
+    */   
     searchSpecialist(){
         console.log("Enter Speciality for search");
         var specialitySearch = algoUtil.stringInput().toLowerCase();
         var search = false;
         for(let i in this.data.doctor){
+            /**
+             * @description To check specific speciality is available in list or not.
+             */
             if(this.data.doctor[i].speciality == specialitySearch){
                 console.log(`\nSpeciality Status for ${specialitySearch} : AVAILABLE`);
                                    
@@ -339,7 +399,9 @@ class Clinic{
     }
 
 
-
+    /**
+    * @method displayPatientData() - To display patient Data.
+    */
     displayPatientData(i){
         console.log("\nPatient's Data ------>"
                     +"\nName      : "+this.data.patient[i].pName
@@ -347,6 +409,9 @@ class Clinic{
                     +"\nContact No: "+this.data.patient[i].contactNo);
     }
 
+    /**
+    * @method displayDoctorData() - To display doctors Data.
+    */
     displayDoctorData(i){
         console.log("\nDoctor's DATA ----->"
                     +"\nName             : "+this.data.doctor[i].drName
@@ -357,5 +422,7 @@ class Clinic{
     }
 }
 
-
+/**
+ * @description Create object of Clinic.
+ */
 module.exports = new Clinic();
