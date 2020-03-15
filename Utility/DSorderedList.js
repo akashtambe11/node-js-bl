@@ -2,7 +2,7 @@ var read = require("readline-sync");
 var fs = require("fs");
 
 /**
- * @class node to 
+ * @class node to create empty node.
  */
 class node {
   constructor(data, next = null) {
@@ -11,13 +11,16 @@ class node {
   }
 }
 
+/**
+ * @class OrderedLinkList to create null top node.
+ */
 class OrderedLinkList {
   constructor() {
     this.head = null;
     this.size = 0;
   }
   /**
-   * @description To read UnorderedList File
+   * @method fileReadOL() - To read UnorderedList File.
    */
   fileReadOL  () {
     var textData = fs.readFileSync(__dirname + "/TextFiles/OrderedList.txt", "utf-8");
@@ -27,11 +30,13 @@ class OrderedLinkList {
 
   
   /**
-   * @description Insert data at the first
+   * @method insertAtFirst() - Insert data at the first.
    */
   insertAtFirst(data) {
     try{ 
-     
+       /**
+        * @description To handle execeptions.
+        */
         if(data == undefined || data == null || data.length == 0)   throw "input should not be undefined or null"
         if(isNaN(data))                                             throw "input should be number"
        
@@ -46,11 +51,13 @@ class OrderedLinkList {
   }
 
   /**
-   * @description Insert data at the last
+   * @method insertAtLast() - Insert data at the last.
    */
   insertAtLast(data) {
     try{  
-    
+        /**
+        * @description To handle execeptions.
+        */
         if(data == undefined || data == null || data.length == 0)   throw "input should not be undefined or null"
         if(isNaN(data))                                             throw "input should be number"
    
@@ -74,16 +81,19 @@ class OrderedLinkList {
   }
 
   /**
-   * @description Insert data at position
+   * @method insertAtPosition() - Insert data at position.
    */
   insertAtPosition(data, index) {
     try{ 
+      /**
+        * @description To handle execeptions.
+        */
         if(data == undefined || data == null || data.length == 0 || index == undefined || index == null || index.length == 0)
                                                                     throw "input should not be undefined or null"
         if(isNaN(data) || isNaN(index))                             throw "input should be number"
   
          /**
-         * @description Index should be grater than zero and size;
+         * @description Index should be grater than zero and size.
          */
         if (index > 0 && index > this.size) {
           return;
@@ -115,7 +125,7 @@ class OrderedLinkList {
 }
 
   /**
-   * @description Delete at start
+   * @method deleteAtStart() - Delete at start.
    */
   deleteAtStart() {
     let temp = this.head;
@@ -125,7 +135,7 @@ class OrderedLinkList {
   }
 
   /**
-   * @description Delete at end
+   * @method deleteAtEnd() - Delete at end.
    */
   deleteAtEnd() {
     let current,
@@ -144,10 +154,13 @@ class OrderedLinkList {
   }
 
   /**
-   * @description Delete at postion
+   * @method deleteAtPosition() - Delete at postion.
    */
   deleteAtPosition(index) {
-    try{ 
+    try{
+      /**
+        * @description To handle execeptions.
+        */ 
       if(index == undefined || index == null || index.length == 0)   throw "input should not be undefined or null"
       if(isNaN(index))                                               throw "input should be number"
 
@@ -175,18 +188,24 @@ class OrderedLinkList {
   }
 
   /**
-   * @description To search element and if found then it will be deleted
-   *              or if not fond then it will add at end
+   * @method search() - To search element and if found then it will be deleted
+   *                    or if not fond then it will add at end.
    */
  search(data){
     try{ 
+        /**
+        * @description To handle execeptions.
+        */
         if(data == undefined || data == null || data.length == 0)   throw "input should not be undefined or null"
         if(isNaN(data))                                            throw "input should be number"
   
     let current = this.head;
     let index = 0;
     let found = false;
-    //If data found then it will be deleted
+
+    /**
+     * @description If data found then it will be deleted.
+     */
       while(current != null){
         if(data == current.data){                               
           this.deleteAtPosition(index);
@@ -196,7 +215,9 @@ class OrderedLinkList {
     index++;   
     }
                                                
-    //If data is not found then it will be added
+    /**
+     * @description If data found then it will be added.
+     */
     if(found == false){
       this.insertAtFirst(data);
     }
@@ -207,12 +228,15 @@ class OrderedLinkList {
     
  }
   
-//-------------------------find data-------------------------------
+
   /**
-   * @description Find data at perticuler index
+   * @method indexGetData() - Find data at perticuler index
    */
   indexGetData(index) {
     try{ 
+      /**
+        * @description To handle execeptions.
+        */
       if(index == undefined || index == null || index.length == 0)   throw "input should not be undefined or null"
       if(isNaN(index))                                               throw "input should be number"
         /**
@@ -233,7 +257,11 @@ class OrderedLinkList {
     }
 
   }
-  //----------------------------------- Sorting ---------------------------
+
+  
+  /**
+  * @method sort() - To sort Data of linklist.
+  */
   sort(){
     let current = this.head, temp;
     let nextNode = null;
@@ -244,7 +272,10 @@ class OrderedLinkList {
                 nextNode = current.next;
                 while(nextNode != null){
                     if(current.data > nextNode.data){
-                        //Swapping
+                      
+                        /**
+                         * @description Swapping process.
+                         */
                         temp = current.data;
                         current.data = nextNode.data;
                         nextNode.data = temp;
@@ -255,9 +286,10 @@ class OrderedLinkList {
             }
         }
   }
-  //------------------------------------printing---------------------------
+ 
+
   /**
-   * @description Print the OrderedLinkList
+   * @method printLinkList() - Print the OrderedLinkList
    */
   printLinkList() {
     let current = this.head, str = "", sortedStr = "";
@@ -268,27 +300,30 @@ class OrderedLinkList {
       str = str + current.data + " ";
       current = current.next;
     }   
-    console.log("\nLength of List = " + this.size);
+    // console.log("\nLength of List = " + this.size);
     
 
     fs.writeFileSync(__dirname + "/TextFiles/OrderedList.txt", str, "utf-8");
-    return str;
+    return [str, this.size];
   }
+
+
   /**
-   * @description Size of LinkList
+   * @method getSize() - Size of LinkList
    */
   getSize(){
     return this.size;
   }
- /**
-  * @description Following Print Function will use for Hashing.js File
-  */
 
+
+ /**
+  * @method hashPrintLinkList() - Following Print Function will use for Hashing.js File
+  */
   hashPrintLinkList() {
     let current = this.head, str = "", sortedStr = "";
 
     while (current != null) {
-      // console.log(current.data);
+      
       str = str + current.data + " ";
       current = current.next;
     }   

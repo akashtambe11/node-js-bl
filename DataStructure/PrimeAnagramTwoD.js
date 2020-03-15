@@ -11,9 +11,15 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/DSutility');
 
-
+/**
+ * @description The main function is written to find anagram number from prime numbers.
+ */
 PrimeAnagramTwoDMain = () => {
     
     var primeNum = util.primeRange(1000);
@@ -25,10 +31,16 @@ PrimeAnagramTwoDMain = () => {
     for(i = 0; i < primeNum.length-1; i++) {
         for(j = i+1; j < primeNum.length; j++) {
             
-            //To check prime numbers are Anagram or Not
+            /**
+             * @description To check prime numbers are Anagram or Not
+             */
             if(util.isAnagram(primeNum[i].toString(), primeNum[j].toString())) {
                 if(primeNum[i] <= size) {
                     if(primeNum[j] <= size) {
+
+                        /**
+                        * @description pushing data in Array.
+                        */
                         array[index].push(primeNum[i]);
                         array[index].push(primeNum[j]);
                     }    
@@ -40,6 +52,9 @@ PrimeAnagramTwoDMain = () => {
                     
 
                     if(primeNum[j] < size) { 
+                        /**
+                        * @description pushing data in Array.
+                        */
                         array[index].push(primeNum[i]);
                         array[index].push(primeNum[j]);
                     }
@@ -48,11 +63,6 @@ PrimeAnagramTwoDMain = () => {
         }
     }
     console.log("\nAnagram Prime Numbers In 2D Array:\n"); 
-    //0-100, 100-200, ....., 900-1000 == 10 Parts
-    // for(m = 0; m < 10; m++){
-    //         console.log(array[m]);
-    //     }
-
     console.log(array); 
 }
 

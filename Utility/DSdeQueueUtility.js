@@ -1,17 +1,21 @@
-
+/**
+ * @class DeQueue to create DeQueue.
+ */
 class DeQueue {
   
     constructor() {
-       
         this.deQueue = new Array();
-
         this.front = -1;
         this.rear = -1;
     }
-
+    /**
+     * @method enqueFront() - To add data at front.
+     */
     enqueFront(value, n){
         try{ 
-     
+            /**
+            * @description To handle execeptions.
+            */
             if(value == undefined || value == null || value.length == 0 || n == undefined || n == null || n.length == 0)   
                                                          throw "input should not be undefined or null"
         }
@@ -36,10 +40,14 @@ class DeQueue {
         }
     }
 
-
+    /**
+     * @method enqueRear() - To add data at rear.
+     */
     enqueRear(value, n){
         try{ 
-     
+            /**
+            * @description To handle execeptions.
+            */
             if(value == undefined || value == null || value.length == 0 || n == undefined || n == null || n.length == 0)   
                                                          throw "input should not be undefined or null"
         }
@@ -64,7 +72,9 @@ class DeQueue {
         }
     }
 
-
+    /**
+     * @method getFront() - To get data of front.
+     */
     getFront() {
         if (this.front == -1 && this.rear == -1) {
             console.log("Queue is Empty \n");
@@ -73,7 +83,9 @@ class DeQueue {
             console.log("Data on Front = "+this.deQueue[this.front]+"\n");
     }
     
-
+    /**
+     * @method getRear() - To get data of rear.
+     */
     getRear() {
         if (this.front == -1 && this.rear == -1) {
             console.log("Queue is Empty \n");
@@ -82,6 +94,9 @@ class DeQueue {
             console.log("Data on Rear = "+this.deQueue[this.rear]+"\n");
     }
 
+    /**
+     * @method deQueueFront() - To remove data from front.
+     */
     deQueueFront(n) {
         try{ 
      
@@ -104,10 +119,14 @@ class DeQueue {
             this.front++;
     }
 
-
+    /**
+     * @method deQueueRear() - To remove data from rear.
+     */
     deQueueRear(n) {
         try{ 
-     
+            /**
+            * @description To handle execeptions.
+            */
             if(n == undefined || n == null || n.length == 0)   
                                                     throw "input should not be undefined or null"
         }
@@ -128,10 +147,14 @@ class DeQueue {
             this.rear--;
     }
 
-
+    /**
+     * @method printQueue() - To print dequeue.
+     */
     printQueue(n) {
         try{ 
-     
+            /**
+            * @description To handle execeptions.
+            */
             if(n == undefined || n == null || n.length == 0)   
                                                     throw "input should not be undefined or null"
         }
@@ -144,10 +167,12 @@ class DeQueue {
             console.log(this.deQueue[i]);
             i = (i + 1) % n;
         }
-        console.log(this.deQueue[this.rear]);
-        
+        console.log(this.deQueue[this.rear]); 
     }
     
 }
 
+/**
+ * @description Create object of to export Hash class
+ */
 module.exports = new DeQueue();

@@ -9,18 +9,25 @@ class node {
   }
 }
 
+/**
+ * @class StackLinkList to Create top Node null.
+ */
 class StackLinkList {
   constructor() {
     this.top = null;
     this.size = 0;
   }
 
-
+  /**
+  * @method push() - To push data in stack.
+  */
   push(data) {
     try{ 
+      /**
+      * @description To handle execeptions.
+      */
       if(data == undefined || data == null || data.length == 0)  throw "input should not be undefined or null"
-      //if(!(/^[a-zA-Z]+$/.test(data)))                            throw "input should be string"
-
+ 
         this.top = new node(data, this.top);
         this.size++;
          
@@ -31,7 +38,9 @@ class StackLinkList {
 
   }
 
-
+  /**
+  * @method pop() - To remove data in stack.
+  */
   pop() {
     if(this.top == null){
         console.log("Stack is Empty");
@@ -46,7 +55,9 @@ class StackLinkList {
   
   }
 
-
+  /**
+  * @method peek() - To find data on peek.
+  */
   peek() {
     if(this.top == null){
         console.log("Stack is Empty");
@@ -55,7 +66,9 @@ class StackLinkList {
         console.log("Data on PEEK: "+this.top.data);
   }
 
-
+  /**
+  * @method printStack() - To print data in stack.
+  */
   printStack() {
     if(this.top == null){
         console.log("Stack is Empty");  
@@ -71,13 +84,15 @@ class StackLinkList {
     
   }
 
-
+  /**
+  * @method reverse() - To reverse data in stack.
+  */
   reverse(){
     var array = new Array();
 
     var current = this.top;
     while(current != null){
-        array += current.data+" ";
+        array += current.data + " ";
         current = current.next;
     }
     array = array.split(" ");
@@ -85,7 +100,9 @@ class StackLinkList {
     for(var i = array.length-2; i >= 1; i--){
         process.stdout.write(array[i]+" --> ");
     }
-    process.stdout.write(array[i]) 
+    process.stdout.write(array[i]);
+    console.log();
+    
 }
 
 }

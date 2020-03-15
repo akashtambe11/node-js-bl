@@ -9,20 +9,26 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/DSorderedList');
 var algoUtil = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to perform ordered linklist operations.
+ */
 orderedList = () => {
     var textData = util.fileReadOL();
 
-    console.log("Text file contains following data : \n"+textData);
+    console.log("\nText file contains following data : \n"+textData);
     /**
      * @description .map function used to convert each number in integer
      */
     var arrData = textData.split(" ").map(function(item) {
         return parseInt(item, 10);
     }); 
-    // console.log(arrData);
     
     /**
      * @description Adding all data in unordered LinkList
@@ -30,24 +36,22 @@ orderedList = () => {
     for(let i= 0; i < arrData.length; i++){
         util.insertAtLast(parseInt(arrData[i]));
     }
-
-    //Printing list of Text File
-    var oldList = util.printLinkList();
-    console.log("Old List = \n"+oldList+"\n");
     
-
+    /**
+     * @description Condition must be reamin true until user exit from process.
+     */
     while(true){
         
-        console.log("1. Insert Element at start");
-        console.log("2. Insert Element at end");
-        console.log("3. Insert Element at position");
-        console.log("4. Delete Element at start");
-        console.log("5. Delete Element at end");
-        console.log("6. Delete Element at position");
-        console.log("7. Find data at Index");
-        console.log("8. Search data");
-        console.log("9. Print List");
-        console.log("10. Exit");
+        console.log("\n1.  Insert Element at start");
+        console.log("2.  Insert Element at end");
+        console.log("3.  Insert Element at position");
+        console.log("4.  Delete Element at start");
+        console.log("5.  Delete Element at end");
+        console.log("6.  Delete Element at position");
+        console.log("7.  Find data at Index");
+        console.log("8.  Search data");
+        console.log("9.  Print List");
+        console.log("10. LOG OUT");
 
         console.log("\nPlease enter your choice");
         var choice = parseInt(algoUtil.integerInput());
@@ -56,12 +60,18 @@ orderedList = () => {
             case 1:
                 console.log("Enter number to insert at start");
                 var data = algoUtil.integerInput();
+                /**
+                * @description Calling insertAtFirst method from DSorderedList File.
+                */
                 util.insertAtFirst(data);
                 break;
 
             case 2:
                 console.log("Enter number to insert at end");
                 var data = algoUtil.integerInput();
+                /**
+                * @description Calling insertAtLast method from DSorderedList File.
+                */
                 util.insertAtLast(data);
                 break;
 
@@ -70,26 +80,41 @@ orderedList = () => {
                 var data = algoUtil.integerInput();
                 console.log("Enter the position");
                 var index = algoUtil.integerInput();
+                /**
+                * @description Calling insertAtPosition method from DSorderedList File.
+                */
                 util.insertAtPosition(data, index);
                 break;
 
             case 4:
+                /**
+                * @description Calling deleteAtStart method from DSorderedList File.
+                */
                 util.deleteAtStart();
                 break;
             
             case 5:
+                /**
+                * @description Calling deleteAtEnd method from DSorderedList File.
+                */
                 util.deleteAtEnd();
                 break;
             
             case 6:
-                console.log("Enter index to delet element");
+                console.log("Enter index to delete element");
                 var index = algoUtil.integerInput();
+                /**
+                * @description Calling deleteAtPosition method from DSorderedList File.
+                */
                 util.deleteAtPosition(index);
                 break;
             
             case 7:
                 console.log("Enter index to get data");
                 var index = algoUtil.integerInput();
+                /**
+                * @description Calling indexGetData method from DSorderedList File.
+                */
                 util.indexGetData(index);
                 break;
             
@@ -98,12 +123,20 @@ orderedList = () => {
                 
                 console.log("\nEnter number to search");
                 var data = algoUtil.integerInput();
+                /**
+                * @description Calling search method from DSorderedList File.
+                */
                 util.search(data);
                 break;
             
             case 9:
+                /**
+                * @description Calling printLinkList method from DSorderedList File.
+                */
+                util.printLinkList();
                 var list = util.printLinkList();
-                console.log("Ordered LinkList: \n"+list+"\n");
+                console.log("\nLength of List: \n"+ list[1]);
+                console.log("\nOrdered LinkList: \n"+list[0]+"\n");
                 break;
                 
             case 10:
@@ -116,4 +149,5 @@ orderedList = () => {
     }
 
 }
+
 orderedList();

@@ -1,3 +1,6 @@
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var read = require("readline-sync");
 var fs = require("fs");
 
@@ -11,13 +14,17 @@ class node {
   }
 }
 
+/**
+ * @class UnOrderedLinkList to Create top Node null.
+ */
 class UnOrderedLinkList {
   constructor() {
     this.head = null;
     this.size = 0;
   }
+
   /**
-   * @description To read UnorderedList File
+   * @method fileRead() - To read UnorderedList File
    */
   fileRead() { 
     var textData = fs.readFileSync(__dirname + "/TextFiles/UnOrderedList.txt", "utf-8");
@@ -27,10 +34,13 @@ class UnOrderedLinkList {
 
   
   /**
-   * @description Insert data at the first
+   * @method insertAtFirst() - Insert data at the first
    */
   insertAtFirst(data) {
     try{ 
+      /**
+      * @description To handle execeptions.
+      */
       if(data == undefined || data == null || data.length == 0)  throw "input should not be undefined or null"
       if(!(/^[a-zA-Z]+$/.test(data)))                            throw "input should be string"
 
@@ -45,10 +55,13 @@ class UnOrderedLinkList {
   }
 
   /**
-   * @description Insert data at the last
+   * @method insertAtLast() - Insert data at the last
    */
   insertAtLast(data) {
     try{ 
+      /**
+      * @description To handle execeptions.
+      */
       if(data == undefined || data == null || data.length == 0)  throw "input should not be undefined or null"
       if(!(/^[a-zA-Z]+$/.test(data)))                            throw "input should be string"
         
@@ -71,10 +84,13 @@ class UnOrderedLinkList {
   }
 
   /**
-   * @description Insert data at position
+   * @method insertAtPosition() - Insert data at position
    */
   insertAtPosition(data, index) {
     try{ 
+      /**
+      * @description To handle execeptions.
+      */
       if(data == undefined || data == null || data.length == 0 || index == undefined || index == null || index.length == 0)
                                                                   throw "input should not be undefined or null"
       if(!(/^[a-zA-Z]+$/.test(data)))                             throw "input data should be string"
@@ -113,7 +129,7 @@ class UnOrderedLinkList {
 }
 
   /**
-   * @description Delete at start
+   * @method deleteAtStart() - Delete at start
    */
   deleteAtStart() {
     let temp = this.head;
@@ -123,7 +139,7 @@ class UnOrderedLinkList {
   }
 
   /**
-   * @description Delete at end
+   * @method deleteAtEnd() - Delete at end
    */
   deleteAtEnd() {
     let current,
@@ -142,10 +158,14 @@ class UnOrderedLinkList {
   }
 
   /**
-   * @description Delete at postion
+   * @method deleteAtPosition() - Delete at postion
    */
   deleteAtPosition(index) {
+
     try{ 
+      /**
+      * @description To handle execeptions.
+      */
       if(index == undefined || index == null || index.length == 0)   throw "input should not be undefined or null"
       if(isNaN(index))                                               throw "input should be number"
 
@@ -173,18 +193,25 @@ class UnOrderedLinkList {
   }
 
   /**
-   * @description To search element and if found then it will be deleted
-   *              or if not fond then it will add at end
+   * @method search() - To search element and if found then it will be deleted
+   *                    or if not fond then it will add at end
    */
  search(data){
-  try{ 
+
+  try{
+    /**
+      * @description To handle execeptions.
+      */ 
     if(data == undefined || data == null || data.length == 0)   throw "input should not be undefined or null"
     if(!(/^[a-zA-Z]+$/.test(data)))                             throw "input should be string"
 
     let current = this.head;
     let index = 0;
     let found = false;
-    //If data found then it will be deleted
+ 
+    /**
+    * @description If data found then it will be deleted.
+    */
       while(current != null){
         if(data == current.data){                               
           this.deleteAtPosition(index);
@@ -194,7 +221,9 @@ class UnOrderedLinkList {
     index++;   
     }
                                                
-    //If data is not found then it will be added
+    /**
+    * @description If data is not found then it will be added.
+    */
     if(found == false){
       this.insertAtFirst(data);
     }
@@ -206,10 +235,13 @@ class UnOrderedLinkList {
  }
   
   /**
-   * @description Find data at perticuler index
+   * @method indexGetData() - Find data at perticuler index
    */
   indexGetData(index) {
-    try{ 
+    try{
+      /**
+      * @description To handle execeptions.
+      */ 
       if(index == undefined || index == null || index.length == 0)   throw "input should not be undefined or null"
       if(isNaN(index))                                               throw "input should be number"
 
@@ -234,18 +266,20 @@ class UnOrderedLinkList {
  
 
   /**
-   * @description Print the LinkList
+   * @method printLinkList() - Print the LinkList
    */
   printLinkList() {
     let current = this.head, str = "";
 
     while (current != null) {
-      // console.log(current.data);
+      
       str = str + current.data + " ";
       current = current.next;
     }   
     console.log("\nLength of List = " + this.size);
-    // return str;
+    /**
+     * @description To write the data into file.
+     */
     fs.writeFileSync(__dirname + "/TextFiles/UnOrderedList.txt", str, "utf-8");
     return str;
   }

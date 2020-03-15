@@ -9,9 +9,16 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/DSutility');
 var algoUtil = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to draw month view of calender.
+ */
 CalenderMain = () => {
     console.log("\nEnter Month");
     var monthInput = algoUtil.integerInput();
@@ -21,6 +28,9 @@ CalenderMain = () => {
     var yearInput = algoUtil.integerInput();
     var y = parseInt(algoUtil.isRighYear(yearInput));
 
+    /**
+    * @description Calling calender method from DSutility File.
+    */
     util.calender(m,y);
 }
 

@@ -9,6 +9,9 @@ class node {
     }
   }  
   
+  /**
+   * @class QueueLinkList to Create new linklist.
+   */
   class QueueLinkList {
     constructor() {
       this.front = null;
@@ -16,9 +19,14 @@ class node {
       this.size = 0;
     }
 
+    /**
+     * @method enqueue() - To add data in queue.
+     */
     enqueue(data){ 
       try{ 
-     
+        /**
+        * @description To handle execeptions.
+        */
         if(data == undefined || data == null || data.length == 0)   
                                                      throw "input should not be undefined or null"
     }
@@ -38,6 +46,9 @@ class node {
         }
     }
 
+    /**
+     * @method dequeue() - To remove data in queue.
+     */
     dequeue() {
         
         if(this.front == null){
@@ -52,7 +63,11 @@ class node {
       
     }
 
+    /**
+     * @method printQueue() - To print data in queue.
+     */
     printStack() {
+
         if(this.front == null){
             console.log("Queue is Empty");  
         }

@@ -1,13 +1,22 @@
+
+/**
+ * @class ArrayStack to Create empty stack.
+ */
 class ArrayStack {
     constructor() {
         this.stack = new Array();
         this.top = -1;
     }
+
+    /**
+    * @method push() - To push data in stack.
+    */
     push(value){ 
         try{ 
-     
+            /**
+             * @description To handle execeptions.
+             */
             if(value == undefined || value == null || value.length == 0)  throw "input should not be undefined or null"
-            // if(isNaN(value))                                              throw "input should be number"
            
             this.top++;
             this.stack[this.top] = value;             
@@ -17,6 +26,9 @@ class ArrayStack {
         } 
     }
 
+    /**
+    * @method pop() - To push data in stack.
+    */
     pop(){
      
         if(this.top == -1){
@@ -26,14 +38,20 @@ class ArrayStack {
             let temp = this.stack[this.top];
             this.stack[this.top] = null;
             this.top--;
-        }
-      
-        
+        }  
     }
+
+    /**
+    * @method push() - To remove data in stack.
+    */
     peek(){ 
         return this.stack[this.top];
-        
+
     }
+
+    /**
+    * @method printStack() - To print data in stack.
+    */
     printStack() {
        
         if(this.top == -1){
@@ -45,8 +63,10 @@ class ArrayStack {
             }
         }
     }
-
-    
+   
 }
 
+/**
+ * @description Create object of ArrayStack.
+ */
 module.exports = new ArrayStack();

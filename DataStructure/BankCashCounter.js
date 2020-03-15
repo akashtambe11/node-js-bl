@@ -9,17 +9,27 @@
 *@author      :  Akash Tambe <akashtambe11@gmail.com>
 *@version     :  1.0
 *********************************************************************************************/
+
+/**
+ * @description Dependencies are required to be install before execution of this file.
+ */
 var util = require('../Utility/DSutility')
 var algoUtil = require('../Utility/AlgorithmUtility');
 
+/**
+ * @description The main function is written to perform bank transaction using queue.
+ */
 BankCashQueueMain = () => {
 
-    console.log("Enter number of people in queue");
+    console.log("\nEnter number of people in queue");
     var people = parseInt(algoUtil.integerInput());
 
     var bankAmount = 100000;
-    console.log("NOTE: Total Bank Amount = 1,00,000 Rs.");
+    console.log("\nNOTE: Total Bank Amount = 1,00,000 Rs.");
     
+    /**
+    * @description Calling bankCounter method from DSutility File.
+    */
     util.bankCounter(people, bankAmount);
     
 }
