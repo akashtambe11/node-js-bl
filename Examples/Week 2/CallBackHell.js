@@ -13,14 +13,14 @@ function multiplication(value, callback) {
 }
 
 
-addition(5, function(addResult, err){
-    if(!err){
-        subtraction(addResult, function(SubResult, err){
-            if(!err){
-                multiplication(SubResult, function(multResult, err){
-                    if(!err){
-                        console.log("\nFinal Result: "+multResult);
-                        
+addition(5, function (addResult, err) {
+    if (!err) {
+        subtraction(addResult, function (SubResult, err) {
+            if (!err) {
+                multiplication(SubResult, function (multResult, err) {
+                    if (!err) {
+                        console.log("\nFinal Result: " + multResult);
+
                     }
                 });
             }
