@@ -52,6 +52,7 @@ class OrderedLinkList {
 
   /**
    * @method insertAtLast() - Insert data at the last.
+   * @param {object} data 
    */
   insertAtLast(data) {
     try{  

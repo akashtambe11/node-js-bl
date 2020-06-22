@@ -49,7 +49,14 @@ class Hash {
                                                     throw "input should not be undefined or null"
             let index = this.hash(data, size)
             let insert = false;
-            
+            /**
+             * @description If array length is zero, then directly push data.
+             */
+            if(linkList[index].length == 0){
+                linkList[index].push(data);
+                return true;
+            }
+
             for(let i = 0; i < linkList[index].length; i++){
 
                 /**
