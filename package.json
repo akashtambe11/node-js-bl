@@ -19,7 +19,7 @@
   "homepage": "https://github.com/akashtambe11/NodejsBL#readme",
   "dependencies": {
     "asserts": "^4.0.2",
-    "async": "^3.1.0",
+    "async": "^3.2.2",
     "child_process": "^1.0.2",
     "commander": "^4.1.0",
     "file-system": "^2.2.2",
